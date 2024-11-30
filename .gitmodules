@@ -7,3 +7,15 @@
 [submodule "neofetch"]
 	path = neofetch
 	url = https://github.com/cilegordev/neofetch
+[submodule "PlusJakartaSans"]
+	path = PlusJakartaSans
+	url = https://github.com/tokotype/PlusJakartaSans/
+[submodule "xarchiver"]
+	path = xarchiver
+	url = https://github.com/ib/xarchiver/
+[submodule "gtk4-layer-shell"]
+	path = gtk4-layer-shell
+	url = https://github.com/wmww/gtk4-layer-shell
+[submodule "gtk-layer-shell"]
+	path = gtk-layer-shell
+	url = https://github.com/wmww/gtk-layer-shell
