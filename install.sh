@@ -2,16 +2,16 @@
 #
 # README.md 
 #
-# This script will be automaticly compile xfce4
+# this script will automatically compile xfce4
 # exluded libxfce4util & xfconf cause pre installed on repo
-# time and date will set to Indonesia/Jakarta, if you need use other you cant a just it after compile
-# sudo with asking password will be gone stop wash your time
-# i dont use vim, vim will be replace with nano
+# time and date will set to Indonesia/Jakarta, if you need to use others, you can't just do it after compile
+# sudo with asking password will be gone, stop washing your time
+# i don't use vim, vim will be replaced with nano
 # include icon, theme and background will be set to Flat ZOMG Dark, Adwaita dark PONIES and Azure Server (default)
-# shell default bash will be replace with zsh
+# shell default bash will be replaced with zsh
 # add extra font PlusJakartaSans
-# warning pre configure user if you don't like this you can configure it
-# automaticly startx after compile
+# warning pre configure user if you don't like this, you can configure it after compile
+# automatically startx after compile
 #
 # MIT License
 #
