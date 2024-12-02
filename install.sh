@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# README.md 
+# README.md
 #
 # this script will automatically compile xfce4
 # warning don't run as sudo ./install.sh
@@ -49,7 +49,7 @@ sudo mkdir /usr/share/icons
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/fonts
 cd ~/pre
-git clone --recurse-submodules https://github.com/cilegordev/Azure-Linux-Desktop-Experience 
+git clone --recurse-submodules https://github.com/cilegordev/Azure-Linux-Desktop-Experience
 cd Azure-Linux-Desktop-Experience/azurelinux-repo && sudo rm -rfv /etc/yum.repos.d/* && sudo mv -v *.repo /etc/yum.repos.d && cd ~/pre
 cd Azure-Linux-Desktop-Experience/Flat-Adwaita && sudo mv -v Adwaita-dark-PONIES /usr/share/themes && sudo mv -v Flat-ZOMG-dark /usr/share/icons && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v img0.png /usr/share/backgrounds/ && cd ~/pre
@@ -57,7 +57,7 @@ cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv xfce4 ~/.config &&
 cd Azure-Linux-Desktop-Experience/neofetch && sudo make install && cd ~/pre
 sudo mkdir /usr/share/fonts/PlusJakartaSans && cd Azure-Linux-Desktop-Experience/PlusJakartaSans/fonts/ttf/ && sudo mv -v *.ttf /usr/share/fonts/PlusJakartaSans && cd ~/pre
 #dependencies-required!
-sudo dnf -y install adwaita* alsa* asciidoc* cairo* dbus* dejavu* desktop-file-utils* drm* doxygen flac* fontconfig* fribidi* gdbm* gdk* glibmm* gnome* gnutls* gobject-introspection* graphene* gspell* gst* gtk* htop intltool* iso-codes* itstool* jansson* libICE* libSM* libX* libXtst* libyaml* libburn* libcanberra* libdbus* libdvd* libedit* libexif* libgcrypt* libgudev* libinput* libisofs* libjpeg* libltdl* libndp* libnotify* libogg* libpng* libpsl* librs* libsecret* libsndfile* libsoup* libva* libvorbis* libvp* libvte* libxcrypt* libxf* libxk* lz* mesa* meson* mm-common mobile-broadband-provider-info* nasm* ncurses* newt* nspr* nss* nano pam* pcre2* perl-XML-Parser* polkit* ppp* pulseaudio* pygobject* sound* upower* vala* vte* vulkan* wayland* xcb* xcu* xdg* xkeyboard* xmlto xorg* xterm* zsh --skip-broken && cd ~/pre
+sudo dnf -y install adwaita* alsa* asciidoc* cairo* dbus* dejavu* desktop-file-utils* drm* doxygen flac* fontconfig* fribidi* gdbm* gdk* glibmm* gnome* gnutls* gobject-introspection* graphene* gspell* gst* gtk* htop intltool* iso-codes* itstool* jansson* libICE* libSM* libX* libXtst* libyaml* libburn* libcanberra* libdbus* libdvd* libedit* libexif* libgcrypt* libgudev* libinput* libisofs* libjpeg* libltdl* libndp* libnotify* libogg* libpng* libpsl* librs* libsecret* libsndfile* libsoup* libva* libvorbis* libvp* libvte* libxcrypt* libxf* libxk* lz* mesa* meson* mm-common mobile-broadband-provider-info* nasm* ncurses* newt* nspr* nss* nano pam* pcre2* perl-XML-Parser* polkit* ppp* pulseaudio* pygobject* sound* upower* vala* vte* vulkan* wayland* xcb* xcu* xdg* xfconf* xkeyboard* xmlto xorg* xterm* zsh --skip-broken && cd ~/pre
 sudo ln -s /usr/bin/gcc /usr/bin/c99
 sudo dnf -y remove vim
 #driver-for-bare-metal!
