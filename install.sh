@@ -5,8 +5,8 @@
 # this script will automatically compile xfce4
 # warning don't run as sudo ./install.sh
 # exluded libxfce4util & xfconf cause pre installed on repo
-# time and date will set to Indonesia/Jakarta, if you need to use others, you can't just do it after compile
-# sudo with asking password will be gone, stop washing your time
+# time and date will set to Indonesia/Jakarta, if you need to use others, you can adjust it after compile
+# sudo with asking password will be gone, stop washing your time!
 # i don't use vim, vim will be replaced with nano
 # include icon, theme and background will be set to Flat ZOMG Dark, Adwaita dark PONIES and Azure Server (default)
 # shell default bash will be replaced with zsh
@@ -57,7 +57,7 @@ cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv xfce4 ~/.config &&
 cd Azure-Linux-Desktop-Experience/neofetch && sudo make install && cd ~/pre
 sudo mkdir /usr/share/fonts/PlusJakartaSans && cd Azure-Linux-Desktop-Experience/PlusJakartaSans/fonts/ttf/ && sudo mv -v *.ttf /usr/share/fonts/PlusJakartaSans && cd ~/pre
 #dependencies-required!
-sudo dnf -y install adwaita* alsa* asciidoc* cairo* dbus* dejavu* desktop-file-utils* drm* doxygen flac* fontconfig* fribidi* gdbm* gdk* glibmm* gnome* gnutls* gobject-introspection* graphene* gspell* gst* gtk* htop intltool* iso-codes* itstool* jansson* libICE* libSM* libX* libXtst* libyaml* libburn* libcanberra* libdbus* libdvd* libedit* libexif* libgcrypt* libgudev* libinput* libisofs* libjpeg* libltdl* libndp* libnotify* libogg* libpng* libpsl* librs* libsecret* libsndfile* libsoup* libva* libvorbis* libvp* libvte* libxcrypt* libxf* libxk* lz* mesa* meson* mm-common mobile-broadband-provider-info* nasm* ncurses* newt* nspr* nss* nano pam* pcre2* perl-XML-Parser* polkit* ppp* pulseaudio* pygobject* sound* upower* vala* vte* vulkan* wayland* xcb* xcu* xdg* xfconf* xkeyboard* xmlto xorg* xterm* zsh --skip-broken && cd ~/pre
+sudo dnf -y install adwaita* alsa* asciidoc* cairo* dbus* dejavu* desktop-file-utils* drm* doxygen flac* fontconfig* fribidi* gdbm* gdk* glibmm* gnome* gnutls* gobject-introspection* graphene* gspell* gst* gtk* htop hwdata* intltool* iso-codes* itstool* jansson* libICE* libSM* libX* libXtst* libyaml* libburn* libcanberra* libdbus* libdvd* libedit* libexif* libgcrypt* libgudev* libinput* libisofs* libjpeg* libltdl* libndp* libnotify* libogg* libpng* libpsl* librs* libsecret* libsndfile* libsoup* libva* libvorbis* libvp* libvte* libxcrypt* libxf* libxk* lz* mesa* meson* mm-common mobile-broadband-provider-info* nasm* ncurses* newt* nspr* nss* nano pam* pcre2* perl-XML-Parser* polkit* ppp* pulseaudio* pygobject* sound* upower* vala* vte* vulkan* wayland* xcb* xcu* xdg* xfconf* xkeyboard* xmlto xorg* xterm* zsh --skip-broken && cd ~/pre
 sudo ln -sv /usr/bin/gcc /usr/bin/c99
 sudo dnf -y remove vim
 #driver-for-bare-metal!
@@ -76,10 +76,10 @@ wget https://archive.xfce.org/src/xfce/xfce4-panel/4.19/xfce4-panel-4.19.2.tar.b
 wget https://archive.xfce.org/src/apps/xfce4-panel-profiles/1.0/xfce4-panel-profiles-1.0.14.tar.bz2 && tar -xvf xfce4-panel-profiles-1.0.14.tar.bz2 && cd xfce4-panel-profiles-1.0.14 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://download.gnome.org/sources/gsettings-desktop-schemas/47/gsettings-desktop-schemas-47.tar.xz && tar -xvf gsettings-desktop-schemas-47.tar.xz && cd gsettings-desktop-schemas-47 && mkdir build && cd build && meson setup .. --prefix=/usr && sudo ninja install && cd ~/pre
 wget https://archive.xfce.org/src/xfce/thunar/4.19/thunar-4.19.2.tar.bz2 && tar -xvf thunar-4.19.2.tar.bz2 && cd thunar-4.19.2 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
-wget https://archive.xfce.org/src/xfce/thunar-volman/4.18/thunar-volman-4.18.0.tar.bz2 && tar -xvf thunar-volman-4.18.0.tar.bz2 && cd thunar-volman-4.18.0
+wget https://archive.xfce.org/src/xfce/thunar-volman/4.18/thunar-volman-4.18.0.tar.bz2 && tar -xvf thunar-volman-4.18.0.tar.bz2 && cd thunar-volman-4.18.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/src/xfce/tumbler/4.19/tumbler-4.19.0.tar.bz2 && tar -xvf tumbler-4.19.0.tar.bz2 && cd tumbler-4.19.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/src/xfce/xfce4-appfinder/4.18/xfce4-appfinder-4.18.1.tar.bz2 && tar -xvf xfce4-appfinder-4.18.1.tar.bz2 && cd xfce4-appfinder-4.18.1 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
-wget https://archive.xfce.org/src/xfce/xfce4-power-manager/4.19/xfce4-power-manager-4.19.2.tar.bz2 && tar -xvf xfce4-power-manager-4.19.2.tar.bz2 && cd fce4-power-manager-4.19.2 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
+wget https://archive.xfce.org/src/xfce/xfce4-power-manager/4.19/xfce4-power-manager-4.19.2.tar.bz2 && tar -xvf xfce4-power-manager-4.19.2.tar.bz2 && cd xfce4-power-manager-4.19.2 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/src/xfce/xfce4-settings/4.19/xfce4-settings-4.19.1.tar.bz2 && tar -xvf xfce4-settings-4.19.1.tar.bz2 && cd xfce4-settings-4.19.1 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/src/xfce/xfdesktop/4.19/xfdesktop-4.19.0.tar.bz2 && tar -xvf xfdesktop-4.19.0.tar.bz2 && cd xfdesktop-4.19.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/src/xfce/xfwm4/4.18/xfwm4-4.18.0.tar.bz2 && tar -xvf xfwm4-4.18.0.tar.bz2  && cd xfwm4-4.18.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
