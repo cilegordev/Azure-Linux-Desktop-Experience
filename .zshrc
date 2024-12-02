@@ -198,7 +198,7 @@ bindkey ^P toggle_oneline_prompt
 # If this is an xterm set the title to Terminal
 case "$TERM" in
 xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
-    TERM_TITLE=$'\e]0;$(. /etc/os-release; echo "$NAME" - Terminal)\a'
+    TERM_TITLE=$'\e]0;$(. /etc/os-release; echo "$NAME")\a'
     ;;
 *)
     ;;
@@ -257,6 +257,7 @@ alias cls='clear'
 alias s='sudo'
 alias ex='exit'
 alias ssr='sudo rm -rfv'
+alias ext='tar -xvf'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
