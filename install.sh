@@ -3,6 +3,7 @@
 # README.md 
 #
 # this script will automatically compile xfce4
+# warning don't run as sudo ./install.sh
 # exluded libxfce4util & xfconf cause pre installed on repo
 # time and date will set to Indonesia/Jakarta, if you need to use others, you can't just do it after compile
 # sudo with asking password will be gone, stop washing your time
