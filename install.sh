@@ -66,7 +66,7 @@ sudo dnf -y install adwaita* alsa* asciidoc* cairo* dbus* dejavu* desktop-file-u
 sudo ln -sv /usr/bin/gcc /usr/bin/c99
 #driver-for-bare-metal!
 git clone https://github.com/mesonbuild/meson && cd meson && chmod +x setup.py && sudo python3 setup.py install && cd ~/pre
-wget https://dri.freedesktop.org/libdrm/libdrm-2.4.123.tar.xz && tar -xvf libdrm-2.4.123.tar.xz && cd libdrm-2.4.123.tar.xz && "$meson" && cd ~/pre
+wget https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz && tar -xvf libdrm-2.4.124.tar.xz && cd libdrm-2.4.124.tar.xz && "$meson" && cd ~/pre
 git clone https://gitlab.com/kernel-firmware/linux-firmware && cd linux-firmware && sudo make install && cd ~/pre
 #your proc/gpu #git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-...intel/amdgpu/ati/nouveau/nv/i740/mach64/r128 && cd xf86-video-...intel/amdgpu/ati/nouveau/nv/i740/mach64/r128 && "$autogen" && cd ~/pre
 git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-fbdev && cd xf86-video-fbdev && "$autogen" && cd ~/pre
@@ -135,7 +135,7 @@ echo -e "export XDG_SESSION_TYPE=x11 \npulseaudio --start \nexec dbus-launch sta
 echo -e 'if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then\n    startx\nfi' >> ~/.bash_profile
 echo -e 'if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then\n    startx\nfi' >> ~/.zprofile
 chsh -s $(which zsh)
-sudo rm -rf /etc/profile.d/debuginfod.sh
+sudo rm -rfv /etc/profile.d/debuginfod.sh
 sudo dnf -y remove vim
 sudo systemctl enable NetworkManager.service
 sudo systemctl start NetworkManager.service
@@ -144,7 +144,7 @@ echo -e "\e[31mwarning - cleaning installer! \e[0m"
 sleep 2
 read -p "Delet temp file? (y/n): " response
 if [ "$response" = "y" ]; then
-    rm -rf ~/pre
+    rm -rfv ~/pre
     echo -e "\e[33mdone - trying to running xfce4! \e[0m"
     sleep 2
 else
