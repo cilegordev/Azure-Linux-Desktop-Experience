@@ -65,10 +65,15 @@ sudo mkdir /usr/share/fonts/PlusJakartaSans && cd Azure-Linux-Desktop-Experience
 sudo dnf -y install adwaita* alsa* asciidoc* cairo* dbus* dejavu* desktop-file-utils* drm* doxygen flac* fontconfig* fribidi* gdbm* gdk* glibmm* gnome* gnutls* gobject-introspection* graphene* gspell* gst* gtk* htop hwdata* intltool* iso-codes* itstool* jansson* libICE* libSM* libX* libXtst* libyaml* libburn* libcanberra* libdbus* libdvd* libedit* libexif* libgcrypt* libgudev* libinput* libisofs* libjpeg* libltdl* libndp* linux-firmware* libnotify* libogg* libpng* libpsl* librs* libsecret* libsndfile* libsoup* libva* libvorbis* libvp* libvte* libxcrypt* libxf* libxk* lynx lz* mesa* meson* mm-common mobile-broadband-provider-info* nasm* ncurses* newt* nspr* nss* nano pam* pcre2* perl-XML-Parser* polkit* ppp* pulseaudio* pygobject* sound* upower* vala* vte* vulkan* wayland* xcb* xcu* xdg* xfconf* xkeyboard* xmlto xorg* xterm* zsh --skip-broken && cd ~/pre
 sudo ln -sv /usr/bin/gcc /usr/bin/c99
 #driver-for-bare-metal!
+git clone https://github.com/mesonbuild/meson && cd meson && chmod +x setup.py && sudo python3 setup.py install && cd ~/pre
+wget https://dri.freedesktop.org/libdrm/libdrm-2.4.123.tar.xz && tar -xvf libdrm-2.4.123.tar.xz && cd libdrm-2.4.123.tar.xz && "$meson" && cd ~/pre
 git clone https://gitlab.com/kernel-firmware/linux-firmware && cd linux-firmware && sudo make install && cd ~/pre
-#your proc/gpu #git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-... && cd xf86-video-... && "$autogen" && cd ~/pre
+#your proc/gpu #git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-...intel/amdgpu/ati/nouveau/nv/i740/mach64/r128 && cd xf86-video-...intel/amdgpu/ati/nouveau/nv/i740/mach64/r128 && "$autogen" && cd ~/pre
 git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-fbdev && cd xf86-video-fbdev && "$autogen" && cd ~/pre
 git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-vesa && cd xf86-video-vesa && "$autogen" && sudo make install && cd ~/pre
+git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-dummy && cd xf86-video-dummy && "$autogen" && sudo make install && cd ~/pre
+#tocuhpad #git clone https://gitlab.freedesktop.org/xorg/driver/xf86-input-synaptics && cd xf86-input-synaptics && "$autogen" && cd ~/pre
+#brightness #git clone https://github.com/Hummer12007/brightnessctl && cd brightnessctl && "$configure" && cd ~/pre
 #xfce4-component!
 cd Azure-Linux-Desktop-Experience/gtk-layer-shell && "$meson" && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4util-4.20.0.tar.bz2 && tar -xvf libxfce4util-4.20.0.tar.bz2 && cd libxfce4util-4.20.0 && "$configure" && cd ~/pre
