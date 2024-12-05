@@ -36,10 +36,10 @@
 # SOFTWARE
 
 #template-compile!
-configure="./configure --prefix=/usr --sysconfdir=/etc && sudo make -j4 install"
-meson="mkdir build && cd build && meson setup .. --prefix=/usr && sudo ninja -j4 install"
-autogen="./autogen.sh --prefix=/usr --sysconfdir=/etc && sudo make -j4 install"
-cmake="mkdir build && cd build && cmake .. --install-prefix=/usr && sudo make -j4 install"
+configure="./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install"
+meson="mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install"
+autogen="./autogen.sh --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install"
+cmake="mkdir build && cd build && cmake .. --install-prefix=/usr && sudo make -j$(nproc) install"
 
 cd ~
 clear
