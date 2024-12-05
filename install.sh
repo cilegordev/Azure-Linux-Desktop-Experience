@@ -40,7 +40,7 @@ configure="./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) i
 meson="mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre"
 autogen="./autogen.sh --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre"
 cmake="mkdir build && cd build && cmake .. --install-prefix=/usr && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre"
-python="chmod +x setup.py && sudo python3 setup.py install && sudo ldconfig && cd ~/pre"
+python="sudo chmod +x setup.py && sudo python3 setup.py install && sudo ldconfig && cd ~/pre"
 
 cd ~
 clear
