@@ -12,6 +12,7 @@
 # add extra font PlusJakartaSans
 # warning pre configure user if you don't like this, you can configure it after compile
 # automatically startx after compile
+# ram usage on tty 300~mb ram usage after boot startx 500~mb ram usage after 5 hours 600~mb
 #
 # MIT License
 #
@@ -62,10 +63,12 @@ cd Azure-Linux-Desktop-Experience && sudo mv -v img0.png /usr/share/backgrounds/
 cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv xfce4 ~/.config && sudo mv -v zsh* /usr/share/ && cd ~/pre
 cd Azure-Linux-Desktop-Experience/neofetch && sudo make install && cd ~/pre
 sudo mkdir /usr/share/fonts/PlusJakartaSans && cd Azure-Linux-Desktop-Experience/PlusJakartaSans/fonts/ttf/ && sudo mv -v *.ttf /usr/share/fonts/PlusJakartaSans && cd ~/pre
+
 #dependencies-required!
 sudo dnf -y install adwaita* alsa* asciidoc* cairo* cryptsetup-devel dbus* dejavu* desktop-file-utils* device-mapper* drm* doxygen e2fsprogs* flac* *font* fribidi* gdbm* gdk* glibmm* gnome* gnutls* gobject-introspection* gperf* graphene* gsettings* gspell* gst* gtk* harfbuzz* htop hwdata* intltool* iso-codes* itstool* jansson* kernel-drivers* kmod* libICE* libSM* libX* libXtst* libarchive* libatasmart* libyaml* libburn* libbytesize* libcanberra* libcap* libcdio* libdbus* libdvd* libedit* libexif* libgcrypt* libgudev* libinput* libisofs* libjpeg* libltdl* libndp* linux-firmware* libnotify* libnvme* libogg* libpng* libpsl* librs* libsecret* libsndfile* libsoup* libusb* libva* libvorbis* libvpx* libvte* libxcrypt* libxk* lynx lz* mesa* meson* mm-common mobile* nasm* ncurses* ndctl* newt* nspr* nss* nano pam* pcre2* perl-XML-Parser* polkit* ppp* pulseaudio* python3-devel python3-gobject-devel python3-pexpect sound* upower* vala* vte* vulkan* wayland* xcb* xcursor-themes xdg* xkeyboard* xmlto xorg* zsh --skip-broken && cd ~/pre
 sudo ln -sv /usr/bin/gcc /usr/bin/c99
 sudo dnf -y remove vim meson
+
 #driver-for-bare-metal!
 git clone https://github.com/mesonbuild/meson && cd meson && "$python"
 wget https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz && tar -xvf libdrm-2.4.124.tar.xz && cd libdrm-2.4.124.tar.xz && "$meson"
@@ -77,6 +80,7 @@ git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-vesa && cd xf86-
 git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-dummy && cd xf86-video-dummy && "$autogen"
 #tocuhpad #git clone https://gitlab.freedesktop.org/xorg/driver/xf86-input-synaptics && cd xf86-input-synaptics && "$autogen"
 #brightness #git clone https://github.com/Hummer12007/brightnessctl && cd brightnessctl && "$configure"
+
 #xfce4-component!
 cd Azure-Linux-Desktop-Experience/gtk-layer-shell && "$meson"
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4util-4.20.0.tar.bz2 && tar -xvf libxfce4util-4.20.0.tar.bz2 && cd libxfce4util-4.20.0 && "$configure"
@@ -98,6 +102,7 @@ wget https://archive.xfce.org/xfce/4.20/src/xfce4-settings-4.20.0.tar.bz2 && tar
 wget https://archive.xfce.org/xfce/4.20/src/xfdesktop-4.20.0.tar.bz2 && tar -xvf xfdesktop-4.19.0.tar.bz2 && cd xfdesktop-4.19.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfwm4-4.20.0.tar.bz2 && tar -xvf xfwm4-4.20.0.tar.bz2 && cd xfwm4-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-session-4.20.0.tar.bz2 && tar -xvf xfce4-session-4.20.0.tar.bz2 && cd xfce4-session-4.20.0 && "$configure"
+
 #xfce4-apps!
 wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.24.9.tar.xz && tar -xvf gstreamer-1.24.9.tar.xz && cd gstreamer-1.24.9 && "$meson"
 wget https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.24.9.tar.xz && tar -xvf gst-plugins-base-1.24.9.tar.xz && cd gst-plugins-base-1.24.9 && "$meson"
@@ -124,6 +129,7 @@ wget https://www.freedesktop.org/software/accountsservice/accountsservice-22.08.
 wget https://archive.xfce.org/src/panel-plugins/xfce4-whiskermenu-plugin/2.8/xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && tar -xvf xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && cd xfce4-whiskermenu-plugin-2.8.3 && "$cmake"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-cpugraph-plugin/1.2/xfce4-cpugraph-plugin-1.2.8.tar.bz2 && tar -xvf xfce4-cpugraph-plugin-1.2.8.tar.bz2 && cd xfce4-cpugraph-plugin-1.2.8 && "$configure"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-clipman-plugin/1.6/xfce4-clipman-plugin-1.6.6.tar.bz2 && tar -xvf xfce4-clipman-plugin-1.6.6.tar.bz2 && cd xfce4-clipman-plugin-1.6.6 && "$configure"
+
 #extended-apps!
 wget https://github.com/storaged-project/libblockdev/releases/download/3.2.1/libblockdev-3.2.1.tar.gz && tar -xvf libblockdev-3.2.1.tar.gz && cd libblockdev-3.2.1 && ./configure --prefix=/usr --sysconfdir=/etc --without-escrow && sudo make install && sudo ldconfig && cd ~/pre
 wget https://github.com/storaged-project/udisks/releases/download/udisks-2.10.1/udisks-2.10.1.tar.bz2 && tar -xvf udisks-2.10.1.tar.bz2 && cd udisks-2.10.1 && "$configure"
@@ -140,6 +146,7 @@ wget https://download.gnome.org/sources/network-manager-applet/1.36/network-mana
 wget https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz && tar -xvf python-distutils-extra-2.39.tar.gz && cd python-distutils-extra-2.39 && "$python"
 cd Azure-Linux-Desktop-Experience/mugshot && "$python"
 wget https://ftp.mozilla.org/pub/firefox/releases/133.0/linux-x86_64/id/firefox-133.0.tar.bz2 && tar -xvf firefox-133.0.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
+
 #setup-x11!
 echo -e "XTerm*mainMenu: true \nXTerm*ToolBar: true \nXTerm*Background: black \nXTerm*Foreground: white" | tee -a ~/.Xdefaults
 echo -e "export XDG_SESSION_TYPE=x11 \npulseaudio --start \nexec dbus-launch startxfce4" | tee -a ~/.xinitrc
