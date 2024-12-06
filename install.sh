@@ -63,9 +63,9 @@ cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv xfce4 ~/.config &&
 cd Azure-Linux-Desktop-Experience/neofetch && sudo make install && cd ~/pre
 sudo mkdir /usr/share/fonts/PlusJakartaSans && cd Azure-Linux-Desktop-Experience/PlusJakartaSans/fonts/ttf/ && sudo mv -v *.ttf /usr/share/fonts/PlusJakartaSans && cd ~/pre
 #dependencies-required!
-sudo dnf -y install adwaita* alsa* asciidoc* cairo* cryptsetup-devel dbus* dejavu* desktop-file-utils* device-mapper-devel drm* doxygen e2fsprogs* flac* *font* fribidi* gdbm* gdk* glibmm* gnome* gnutls* gobject-introspection* gperf* graphene* gsettings-desktop-schemas* gspell* gst* gtk* harfbuzz* htop hwdata* intltool* iso-codes* itstool* jansson* kernel-drivers* kmod* libICE* libSM* libX* libXtst* libarchive* libatasmart* libyaml* libburn* libbytesize* libcanberra* libcap* libcdio* libdbus* libdvd* libedit* libexif* libgcrypt* libgudev* libinput* libisofs* libjpeg* libltdl* libndp* linux-firmware* libnotify* libnvme* libogg* libpng* libpsl* librs* libsecret* libsndfile* libsoup* libusb* libva* libvorbis* libvp* libvte* libxcrypt* libxf* libxk* lynx lz* mesa* meson* mm-common mobile-broadband-provider-info* nasm* ncurses* ndctl* newt* nspr* nss* nano pam* pcre2* perl-XML-Parser* polkit* ppp* pulseaudio* pygobject* python3-devel python3-pexpect sound* upower* vala* vte* vulkan* wayland* xcb* xcu* xdg* xfconf* xkeyboard* xmlto xorg* xterm* zsh --skip-broken && cd ~/pre
+sudo dnf -y install adwaita* alsa* asciidoc* cairo* cryptsetup-devel dbus* dejavu* desktop-file-utils* device-mapper* drm* doxygen e2fsprogs* flac* *font* fribidi* gdbm* gdk* glibmm* gnome* gnutls* gobject-introspection* gperf* graphene* gsettings* gspell* gst* gtk* harfbuzz* htop hwdata* intltool* iso-codes* itstool* jansson* kernel-drivers* kmod* libICE* libSM* libX* libXtst* libarchive* libatasmart* libyaml* libburn* libbytesize* libcanberra* libcap* libcdio* libdbus* libdvd* libedit* libexif* libgcrypt* libgudev* libinput* libisofs* libjpeg* libltdl* libndp* linux-firmware* libnotify* libnvme* libogg* libpng* libpsl* librs* libsecret* libsndfile* libsoup* libusb* libva* libvorbis* libvpx* libvte* libxcrypt* libxk* lynx lz* mesa* meson* mm-common mobile* nasm* ncurses* ndctl* newt* nspr* nss* nano pam* pcre2* perl-XML-Parser* polkit* ppp* pulseaudio* python3-devel python3-gobject-devel python3-pexpect sound* upower* vala* vte* vulkan* wayland* xcb* xcursor-themes xdg* xkeyboard* xmlto xorg* zsh --skip-broken && cd ~/pre
 sudo ln -sv /usr/bin/gcc /usr/bin/c99
-sudo dnf -y remove meson
+sudo dnf -y remove vim meson
 #driver-for-bare-metal!
 git clone https://github.com/mesonbuild/meson && cd meson && "$python"
 wget https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz && tar -xvf libdrm-2.4.124.tar.xz && cd libdrm-2.4.124.tar.xz && "$meson"
@@ -96,7 +96,7 @@ wget https://archive.xfce.org/xfce/4.20/src/xfce4-appfinder-4.20.0.tar.bz2 && ta
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-power-manager-4.20.0.tar.bz2 && tar -xvf xfce4-power-manager-4.20.0.tar.bz2 && cd xfce4-power-manager-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-settings-4.20.0.tar.bz2 && tar -xvf xfce4-settings-4.20.0.tar.bz2 && cd xfce4-settings-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfdesktop-4.20.0.tar.bz2 && tar -xvf xfdesktop-4.19.0.tar.bz2 && cd xfdesktop-4.19.0 && "$configure"
-wget https://archive.xfce.org/xfce/4.20/src/xfwm4-4.20.0.tar.bz2 && tar -xvf xfwm4-4.20.0.tar.bz2  && cd xfwm4-4.20.0 && "$configure"
+wget https://archive.xfce.org/xfce/4.20/src/xfwm4-4.20.0.tar.bz2 && tar -xvf xfwm4-4.20.0.tar.bz2 && cd xfwm4-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-session-4.20.0.tar.bz2 && tar -xvf xfce4-session-4.20.0.tar.bz2 && cd xfce4-session-4.20.0 && "$configure"
 #xfce4-apps!
 wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.24.9.tar.xz && tar -xvf gstreamer-1.24.9.tar.xz && cd gstreamer-1.24.9 && "$meson"
@@ -147,7 +147,6 @@ echo -e 'if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then\n    startx\nf
 echo -e 'if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then\n    startx\nfi' >> ~/.zprofile
 chsh -s $(which zsh)
 sudo rm -rfv /etc/profile.d/debuginfod.sh
-sudo dnf -y remove vim
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 sudo systemctl enable NetworkManager.service
 sudo systemctl start NetworkManager.service
@@ -157,6 +156,7 @@ sleep 2
 read -p "Delet temp file? (y/n): " response
 if [ "$response" = "y" ]; then
     rm -rfv ~/pre
+    sudo dnf -y remove adwaita-icon-theme-devel cairo-devel cairomm-d* cryptsetup-devel dbus-python-devel device-mapper*devel e2fsprogs-devel flac-devel gdbm-devel gdk-pixbuf2-tests glibmm-d* gnome-icon-theme-devel gtk2-devel-docs gtk3-devel-docs gtk3-tests gtkspell-devel gperftools-d* graphene-devel graphene-tests gsettings-desktop-schemas-devel gspell-d* gstreamer1-devel hwdata-devel iso-codes-devel jansson-devel kmod-devel libICE-devel libX*devel libarchive-devel libyaml-devel libburn-devel libbytesize-devel libcanberra-devel libcap-devel libcap-ng-devel libcdio-devel libdbusmenu-devel libdvdread-devel libedit-devel libexif-d* libgcrypt-devel libgudev-devel libinput-devel libinput-test libisofs-devel libjpeg-turbo-devel libltdl-devel libndp-devel libnotify-devel libogg-d* libpng12-devel libpsl-devel librs*devel libsecret-devel libsndfile-devel libsoup-devel libva*devel* libvorbis-d* libvpx-devel libxcrypt-devel libxk*devel* lynx lz4-devel lzo-devel mobile-broadband-provider-info-devel ncurses-devel ndctl-devel newt-devel nspr-devel nss-devel pam-devel pcre2-devel-static pcre2-doc polkit-devel ppp-devel python3-devel soundtouch-devel upower-devel vala-d* vte291-devel vulkan-loader-devel wayland-d* xcb-util*devel* xkeyboard-config-devel xorg*devel*
     echo -e "\e[33mdone - trying to running xfce4! \e[0m"
     sleep 2
 else
