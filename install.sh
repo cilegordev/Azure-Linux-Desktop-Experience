@@ -104,10 +104,10 @@ wget https://archive.xfce.org/xfce/4.20/src/xfwm4-4.20.0.tar.bz2 && tar -xvf xfw
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-session-4.20.0.tar.bz2 && tar -xvf xfce4-session-4.20.0.tar.bz2 && cd xfce4-session-4.20.0 && "$configure"
 
 #xfce4-apps!
-wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.24.9.tar.xz && tar -xvf gstreamer-1.24.9.tar.xz && cd gstreamer-1.24.9 && "$meson"
-wget https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.24.9.tar.xz && tar -xvf gst-plugins-base-1.24.9.tar.xz && cd gst-plugins-base-1.24.9 && "$meson"
+wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.24.9.tar.xz && tar -xvf gstreamer-1.24.9.tar.xz && cd gstreamer-1.24.9 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc -D gst_debug=false && sudo ninja install && cd ~/pre
+wget https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.24.9.tar.xz && tar -xvf gst-plugins-base-1.24.9.tar.xz && cd gst-plugins-base-1.24.9 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --wrap-mode=nodownload && sudo ninja install && cd ~/pre
 wget https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.24.9.tar.xz && tar -xvf gst-plugins-good-1.24.9.tar.xz && cd gst-plugins-good-1.24.9 && "$meson"
-wget https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.24.9.tar.xz && tar -xvf gst-plugins-bad-1.24.9.tar.xz && cd gst-plugins-bad-1.24.9 && "$meson"
+wget https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.24.9.tar.xz && tar -xvf gst-plugins-bad-1.24.9.tar.xz && cd gst-plugins-bad-1.24.9 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc -D gpl=enabled && sudo ninja install && cd ~/pre
 wget https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.15.0.tar.xz && tar -xvf fontconfig-2.15.0.tar.xz && cd fontconfig-2.15.0 && "$configure"
 wget https://download.gnome.org/sources/pango/1.55/pango-1.55.0.tar.xz && tar -xvf pango-1.55.0.tar.xz && cd pango-1.55.0 && "$meson"
 wget https://download.gnome.org/sources/gtk/4.17/gtk-4.17.0.tar.xz && tar -xvf gtk-4.17.0.tar.xz && cd gtk-4.17.0 && mkdir build && cd build && meson setup --prefix=/usr --sysconfdir=/etc --buildtype=release -D broadway-backend=true -D introspection=enabled -D vulkan=disabled && sudo ninja install && sudo ldconfig && cd ~/pre
@@ -127,6 +127,7 @@ wget https://archive.xfce.org/src/apps/xfce4-panel-profiles/1.0/xfce4-panel-prof
 wget https://archive.xfce.org/src/panel-plugins/xfce4-pulseaudio-plugin/0.4/xfce4-pulseaudio-plugin-0.4.8.tar.bz2 && tar -xvf xfce4-pulseaudio-plugin-0.4.8.tar.bz2 && cd xfce4-pulseaudio-plugin-0.4.8 && "$configure"
 wget https://www.freedesktop.org/software/accountsservice/accountsservice-22.08.8.tar.xz && tar -xvf accountsservice-22.08.8.tar.xz && cd accountsservice-22.08.8 && "$meson"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-whiskermenu-plugin/2.8/xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && tar -xvf xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && cd xfce4-whiskermenu-plugin-2.8.3 && "$cmake"
+cd Azure-Linux-Desktop-Experience/mugshot && "$python"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-cpugraph-plugin/1.2/xfce4-cpugraph-plugin-1.2.8.tar.bz2 && tar -xvf xfce4-cpugraph-plugin-1.2.8.tar.bz2 && cd xfce4-cpugraph-plugin-1.2.8 && "$configure"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-clipman-plugin/1.6/xfce4-clipman-plugin-1.6.6.tar.bz2 && tar -xvf xfce4-clipman-plugin-1.6.6.tar.bz2 && cd xfce4-clipman-plugin-1.6.6 && "$configure"
 
@@ -144,7 +145,6 @@ wget https://download.gnome.org/sources/NetworkManager/1.51/NetworkManager-1.51.
 wget https://download.gnome.org/sources/libnma/1.10/libnma-1.10.6.tar.xz && tar -xvf libnma-1.10.6.tar.xz && cd libnma-1.10.6 && "$autogen"
 wget https://download.gnome.org/sources/network-manager-applet/1.36/network-manager-applet-1.36.0.tar.xz && tar -xvf network-manager-applet-1.36.0.tar.xz && cd network-manager-applet-1.36.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D appindicator=no -D wwan=false && sudo ninja install && sudo ldconfig && cd ~/pre
 wget https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz && tar -xvf python-distutils-extra-2.39.tar.gz && cd python-distutils-extra-2.39 && "$python"
-cd Azure-Linux-Desktop-Experience/mugshot && "$python"
 wget https://ftp.mozilla.org/pub/firefox/releases/133.0/linux-x86_64/id/firefox-133.0.tar.bz2 && tar -xvf firefox-133.0.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
 
 #setup-x11!
