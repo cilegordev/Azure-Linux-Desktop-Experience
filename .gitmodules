@@ -19,3 +19,6 @@
 [submodule "gtk-layer-shell"]
 	path = gtk-layer-shell
 	url = https://github.com/wmww/gtk-layer-shell
+[submodule "mugshot"]
+	path = mugshot
+	url = https://github.com/bluesabre/mugshot
