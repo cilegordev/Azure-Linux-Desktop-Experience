@@ -49,6 +49,7 @@ echo -e "\e[32mwellcome - xfce4 installer! \e[0m"
 sleep 2
 sudo timedatectl set-timezone Asia/Jakarta
 echo "$(whoami) ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$(whoami)
+sudo dnf -y install azurelinux-repos*
 mkdir .config
 mkdir pre
 sudo mkdir /usr/share/themes
@@ -57,7 +58,6 @@ sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/fonts
 cd ~/pre
 git clone --recurse-submodules https://github.com/cilegordev/Azure-Linux-Desktop-Experience
-cd Azure-Linux-Desktop-Experience/azurelinux-repo && sudo rm -rfv /etc/yum.repos.d/* && sudo mv -v *.repo /etc/yum.repos.d && cd ~/pre
 cd Azure-Linux-Desktop-Experience/Flat-Adwaita && sudo mv -v Adwaita-dark-PONIES /usr/share/themes && sudo mv -v Flat-ZOMG-dark /usr/share/icons && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v img0.png /usr/share/backgrounds/ && cd ~/pre
 cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv xfce4 ~/.config && sudo mv -v zsh* /usr/share/ && cd ~/pre
@@ -133,7 +133,7 @@ wget https://archive.xfce.org/src/panel-plugins/xfce4-clipman-plugin/1.6/xfce4-c
 #extended-apps!
 wget https://github.com/storaged-project/libblockdev/releases/download/3.2.1/libblockdev-3.2.1.tar.gz && tar -xvf libblockdev-3.2.1.tar.gz && cd libblockdev-3.2.1 && ./configure --prefix=/usr --sysconfdir=/etc --without-escrow && sudo make install && sudo ldconfig && cd ~/pre
 wget https://github.com/storaged-project/udisks/releases/download/udisks-2.10.1/udisks-2.10.1.tar.bz2 && tar -xvf udisks-2.10.1.tar.bz2 && cd udisks-2.10.1 && "$configure"
-wget https://download.gnome.org/sources/gcr/4.3/gcr-4.3.0.tar.xz && tar -xvf gcr-4.3.0.tar.xz && cd gcr-4.3.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc -D gtk_doc=false && sudo ninja install && cd ~/pre
+wget https://download.gnome.org/sources/gcr/4.3/gcr-4.3.0.tar.xz && tar -xvf gcr-4.3.0.tar.xz && cd gcr-4.3.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D gtk_doc=false && sudo ninja install && cd ~/pre
 wget https://download.gnome.org/sources/gvfs/1.56/gvfs-1.56.1.tar.xz && tar -xvf gvfs-1.56.1.tar.xz && cd gvfs-1.56.1 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D onedrive=false -D fuse=false -D gphoto2=false -D afc=false -D bluray=false -D nfs=false -D mtp=false -D smb=false -D tmpfilesdir=no -D dnssd=false -D goa=false -D google=false && sudo ninja install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/atkmm/2.36/atkmm-2.36.3.tar.xz && tar -xvf atkmm-2.36.3.tar.xz && cd atkmm-2.36.3 && "$meson"
 wget https://www.cairographics.org/releases/cairomm-1.16.0.tar.xz && tar -xvf cairomm-1.16.0.tar.xz && cd cairomm-1.16.0 && "$autogen"
