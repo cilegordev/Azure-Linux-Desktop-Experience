@@ -1,6 +1,3 @@
-[submodule "azurelinux-repo"]
-	path = azurelinux-repo
-	url = https://github.com/cilegordev/azurelinux-repo
 [submodule "Flat-Adwaita"]
 	path = Flat-Adwaita
 	url = https://github.com/cilegordev/Flat-Adwaita
