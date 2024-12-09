@@ -129,8 +129,11 @@ wget https://archive.xfce.org/src/panel-plugins/xfce4-whiskermenu-plugin/2.8/xfc
 cd Azure-Linux-Desktop-Experience/mugshot && "$python"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-cpugraph-plugin/1.2/xfce4-cpugraph-plugin-1.2.8.tar.bz2 && tar -xvf xfce4-cpugraph-plugin-1.2.8.tar.bz2 && cd xfce4-cpugraph-plugin-1.2.8 && "$configure"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-clipman-plugin/1.6/xfce4-clipman-plugin-1.6.6.tar.bz2 && tar -xvf xfce4-clipman-plugin-1.6.6.tar.bz2 && cd xfce4-clipman-plugin-1.6.6 && "$configure"
+wget https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.2.tar.bz2 && tar -xvf xfce4-docklike-plugin-0.4.2.tar.bz2 && cd xfce4-docklike-plugin-0.4.2 && "$configure"
+wget https://archive.xfce.org/src/panel-plugins/xfce4-netload-plugin/1.4/xfce4-netload-plugin-1.4.1.tar.bz2 && tar -xvf xfce4-netload-plugin-1.4.1.tar.bz2 && cd xfce4-netload-plugin-1.4.1 && "$configure"
 
 #extended-apps!
+cd Azure-Linux-Desktop-Experience/xdotool && sudo make install
 wget https://github.com/storaged-project/libblockdev/releases/download/3.2.1/libblockdev-3.2.1.tar.gz && tar -xvf libblockdev-3.2.1.tar.gz && cd libblockdev-3.2.1 && ./configure --prefix=/usr --sysconfdir=/etc --without-escrow && sudo make install && sudo ldconfig && cd ~/pre
 wget https://github.com/storaged-project/udisks/releases/download/udisks-2.10.1/udisks-2.10.1.tar.bz2 && tar -xvf udisks-2.10.1.tar.bz2 && cd udisks-2.10.1 && "$configure"
 wget https://download.gnome.org/sources/gcr/4.3/gcr-4.3.0.tar.xz && tar -xvf gcr-4.3.0.tar.xz && cd gcr-4.3.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D gtk_doc=false && sudo ninja install && cd ~/pre
