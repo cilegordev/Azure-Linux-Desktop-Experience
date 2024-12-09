@@ -22,3 +22,6 @@
 [submodule "mugshot"]
 	path = mugshot
 	url = https://github.com/bluesabre/mugshot
+[submodule "xdotool"]
+	path = xdotool
+	url = https://github.com/jordansissel/xdotool
