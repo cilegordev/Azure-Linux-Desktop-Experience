@@ -258,6 +258,12 @@ alias s='sudo'
 alias ex='exit'
 alias ssr='sudo rm -rfv'
 alias ext='tar -xvf'
+alias gs='git status'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias lc='git show'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
