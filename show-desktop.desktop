@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Show Desktop
+Comment=Minimize all open windows and show the desktop
+Exec=xdotool key ctrl+alt+d
+Icon=org.xfce.panel.showdesktop
+Type=Application
