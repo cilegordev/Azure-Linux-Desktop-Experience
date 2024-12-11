@@ -48,6 +48,7 @@ clear
 echo -e "\e[32mwellcome - xfce4 installer! \e[0m"
 sleep 2
 sudo timedatectl set-timezone Asia/Jakarta
+sudo timedatectl set-local-rtc 1 --adjust-system-clock
 echo "$(whoami) ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$(whoami)
 sudo dnf -y install azurelinux-repos* && sudo dnf -y remove azurelinux-repos-debug*
 mkdir .config
@@ -150,7 +151,7 @@ wget https://download.gnome.org/sources/network-manager-applet/1.36/network-mana
 wget https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz && tar -xvf python-distutils-extra-2.39.tar.gz && cd python-distutils-extra-2.39 && "$python"
 wget https://download.gnome.org/sources/gtk-vnc/1.3/gtk-vnc-1.3.1.tar.xz && tar -xvf gtk-vnc-1.3.1.tar.xz && cd gtk-vnc-1.3.1 && "$meson"
 wget https://ftp.mozilla.org/pub/firefox/releases/133.0/linux-x86_64/id/firefox-133.0.tar.bz2 && tar -xvf firefox-133.0.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
-cd Azure-Linux-Desktop-Experience && sudo mv -v firefox-esr.desktop /usr/share/applications && cd ~
+cd Azure-Linux-Desktop-Experience && sudo mv -v *.desktop /usr/share/applications && cd ~
 
 #setup-x11!
 echo -e "XTerm*mainMenu: true \nXTerm*ToolBar: true \nXTerm*Background: black \nXTerm*Foreground: white" | tee -a ~/.Xdefaults
