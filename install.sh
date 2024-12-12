@@ -69,7 +69,7 @@ sudo mkdir /usr/share/fonts/PlusJakartaSans && cd Azure-Linux-Desktop-Experience
 #dependencies-required!
 sudo dnf -y install adwaita* alsa* asciidoc* cairo* cryptsetup-devel dbus* dejavu* desktop-file-utils* device-mapper* drm* doxygen e2fsprogs* flac* *font* fribidi* gdbm* gdk* glibmm* gnome* gnutls* gobject-introspection* gperf* graphene* gsettings* gspell* gst* gtk* harfbuzz* htop hwdata* intltool* iso-codes* itstool* jansson* kernel-drivers* kmod* libICE* libSM* libX* libXtst* libarchive* libatasmart* libyaml* libburn* libbytesize* libcanberra* libcap* libcdio* libdbus* libdvd* libedit* libexif* libgcrypt* libgudev* libinput* libisofs* libjpeg* libltdl* libndp* linux-firmware* libnotify* libnvme* libogg* libpng* libpsl* librs* libsecret* libsndfile* libsoup* libusb* libva* libvorbis* libvpx* libvte* libxcrypt* libxk* lynx lz* mesa* meson* mm-common mobile* nasm* ncurses* ndctl* newt* nspr* nss* nano pam* pcre2* perl-XML-Parser* polkit* ppp* pulseaudio* python3-devel python3-gobject* python3-pexpect python3-psutil sound* upower* vala* vte* vulkan* wayland* xcb* xcursor-themes xdg* xkeyboard* xmlto xorg* zsh --skip-broken && cd ~/pre
 sudo ln -sv /usr/bin/gcc /usr/bin/c99
-sudo dnf -y remove vim meson
+sudo dnf -y remove vim meson xterm
 
 #driver-for-bare-metal!
 git clone https://github.com/mesonbuild/meson && cd meson && "$python"
@@ -151,11 +151,12 @@ wget https://download.gnome.org/sources/libnma/1.10/libnma-1.10.6.tar.xz && tar 
 wget https://download.gnome.org/sources/network-manager-applet/1.36/network-manager-applet-1.36.0.tar.xz && tar -xvf network-manager-applet-1.36.0.tar.xz && cd network-manager-applet-1.36.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D appindicator=no -D wwan=false && sudo ninja install && sudo ldconfig && cd ~/pre
 wget https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz && tar -xvf python-distutils-extra-2.39.tar.gz && cd python-distutils-extra-2.39 && "$python"
 wget https://download.gnome.org/sources/gtk-vnc/1.3/gtk-vnc-1.3.1.tar.xz && tar -xvf gtk-vnc-1.3.1.tar.xz && cd gtk-vnc-1.3.1 && "$meson"
+wget https://invisible-mirror.net/archives/xterm/xterm-396.tgz && tar -xvf xterm-396.tgz && cd xterm-396 && ./configure --prefix=/usr --sysconfdir=/etc --enable-toolbar && sudo make install && sudo make install-ti && cp -v *.desktop ~/.local/share/applications/ && cd ~/pre
 wget https://ftp.mozilla.org/pub/firefox/releases/133.0/linux-x86_64/id/firefox-133.0.tar.bz2 && tar -xvf firefox-133.0.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v *.desktop /usr/share/applications && cd ~
 
 #setup-x11!
-echo -e "XTerm*mainMenu: true \nXTerm*ToolBar: true \nXTerm*Background: black \nXTerm*Foreground: white" | tee -a ~/.Xdefaults
+echo -e "XTerm*mainMenu: true \nXTerm*ToolBar: true \nXTerm*Background: black \nXTerm*Foreground: white \nXTerm*borderColor: white \nXTerm*allowWindowOps: true \nXTerm*VT100*locale: true \nXTerm*VT100*faceName: Monospace \nXTerm*VT100*faceSize: 12 \nXTerm*backarrowKeyIsErase: true" | tee -a ~/.Xdefaults
 echo -e "export XDG_SESSION_TYPE=x11 \npulseaudio --start \nexec dbus-launch startxfce4" | tee -a ~/.xinitrc
 echo -e 'if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then\n    startx\nfi' >> ~/.bash_profile
 echo -e 'if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then\n    startx\nfi' >> ~/.zprofile
