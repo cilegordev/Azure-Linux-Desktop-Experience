@@ -50,7 +50,7 @@ sleep 2
 sudo timedatectl set-timezone Asia/Jakarta
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 echo "$(whoami) ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$(whoami)
-sudo dnf -y install azurelinux-repos* && sudo dnf -y remove azurelinux-repos-debug*
+sudo dnf -y install azurelinux-repos* && sudo dnf -y remove azurelinux-repos-debug* && sudo rm -rf /etc/yum.repos.d/*debug*
 mkdir .config
 mkdir pre
 sudo mkdir /usr/share/applications
@@ -59,7 +59,7 @@ sudo mkdir /usr/share/icons
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/fonts
 cd ~/pre
-git clone --recurse-submodules https://github.com/cilegordev/Azure-Linux-Desktop-Experience
+git clone --recurse-submodules --branch=Experimental https://github.com/cilegordev/Azure-Linux-Desktop-Experience
 cd Azure-Linux-Desktop-Experience/Flat-Adwaita && sudo mv -v Adwaita-dark-PONIES /usr/share/themes && sudo mv -v Flat-ZOMG-dark /usr/share/icons && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v img0.png /usr/share/backgrounds/ && cd ~/pre
 cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv xfce4 ~/.config && sudo mv -v zsh* /usr/share/ && cd ~/pre
@@ -73,7 +73,7 @@ sudo dnf -y remove vim meson xterm
 
 #driver-for-bare-metal!
 git clone https://github.com/mesonbuild/meson && cd meson && "$python"
-wget https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz && tar -xvf libdrm-2.4.124.tar.xz && cd libdrm-2.4.124.tar.xz && "$meson"
+wget https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz && tar -xvf libdrm-2.4.124.tar.xz && cd libdrm-2.4.124 && "$meson"
 git clone https://github.com/Lyude/mesa-utils && cd mesa-utils && "$meson"
 wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20241210.tar.gz && tar -xvf linux-firmware-20241210.tar.gz && cd linux-firmware-20241210 && sudo make install && cd ~/pre
 #your proc/gpu #git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-...intel/amdgpu/ati/nouveau/nv/i740/mach64/r128 && cd xf86-video-...intel/amdgpu/ati/nouveau/nv/i740/mach64/r128 && "$autogen"
@@ -87,11 +87,13 @@ git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-dummy && cd xf86
 cd Azure-Linux-Desktop-Experience/gtk-layer-shell && "$meson"
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4util-4.20.0.tar.bz2 && tar -xvf libxfce4util-4.20.0.tar.bz2 && cd libxfce4util-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfconf-4.20.0.tar.bz2 && tar -xvf xfconf-4.20.0.tar.bz2 && cd xfconf-4.20.0 && "$configure"
+wget https://download.gnome.org/sources/libgtop/2.41/libgtop-2.41.3.tar.xz && tar -xvf libgtop-2.41.3.tar.xz && cd libgtop-2.41.3 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4ui-4.20.0.tar.bz2 && tar -xvf libxfce4ui-4.20.0.tar.bz2 && cd libxfce4ui-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/exo-4.20.0.tar.bz2 && tar -xvf exo-4.20.0.tar.bz2 && cd exo-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/garcon-4.20.0.tar.bz2 && tar -xvf garcon-4.20.0.tar.bz2 && cd garcon-4.20.0 && "$configure"
 wget https://download.gnome.org/sources/libwnck/43/libwnck-43.1.tar.xz && tar -xvf libwnck-43.1.tar.xz && cd libwnck-43.1 && "$meson"
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-dev-tools-4.20.0.tar.bz2 && tar -xvf xfce4-dev-tools-4.20.0.tar.bz2 && cd xfce4-dev-tools-4.20.0 && "$configure"
+wget https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/0.2.0/libdisplay-info-0.2.0.tar.gz && tar -xvf libdisplay-info-0.2.0.tar.gz && cd libdisplay-info-0.2.0 && "$meson"
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4windowing-4.20.0.tar.bz2 && tar -xvf libxfce4windowing-4.20.0.tar.bz2 && cd libxfce4windowing-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-panel-4.20.0.tar.bz2 && tar -xvf xfce4-panel-4.20.0.tar.bz2 && cd xfce4-panel-4.20.0 && "$configure"
 wget https://download.gnome.org/sources/gsettings-desktop-schemas/47/gsettings-desktop-schemas-47.1.tar.xz && tar -xvf gsettings-desktop-schemas-47.1.tar.xz && cd gsettings-desktop-schemas-47.1 && "$meson"
@@ -129,6 +131,7 @@ wget https://archive.xfce.org/src/apps/xfce4-panel-profiles/1.0/xfce4-panel-prof
 wget https://archive.xfce.org/src/panel-plugins/xfce4-pulseaudio-plugin/0.4/xfce4-pulseaudio-plugin-0.4.9.tar.bz2 && tar -xvf xfce4-pulseaudio-plugin-0.4.9.tar.bz2 && cd xfce4-pulseaudio-plugin-0.4.9 && "$configure"
 wget https://www.freedesktop.org/software/accountsservice/accountsservice-22.08.8.tar.xz && tar -xvf accountsservice-22.08.8.tar.xz && cd accountsservice-22.08.8 && "$meson"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-whiskermenu-plugin/2.8/xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && tar -xvf xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && cd xfce4-whiskermenu-plugin-2.8.3 && "$cmake"
+wget https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz && tar -xvf python-distutils-extra-2.39.tar.gz && cd python-distutils-extra-2.39 && "$python"
 cd Azure-Linux-Desktop-Experience/mugshot && "$python"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-cpugraph-plugin/1.2/xfce4-cpugraph-plugin-1.2.8.tar.bz2 && tar -xvf xfce4-cpugraph-plugin-1.2.8.tar.bz2 && cd xfce4-cpugraph-plugin-1.2.8 && "$configure"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-clipman-plugin/1.6/xfce4-clipman-plugin-1.6.6.tar.bz2 && tar -xvf xfce4-clipman-plugin-1.6.6.tar.bz2 && cd xfce4-clipman-plugin-1.6.6 && "$configure"
@@ -149,9 +152,8 @@ wget https://www.freedesktop.org/software/pulseaudio/pavucontrol/pavucontrol-6.1
 wget https://download.gnome.org/sources/NetworkManager/1.51/NetworkManager-1.51.4.tar.xz && tar -xvf NetworkManager-1.51.4.tar.xz && cd NetworkManager-1.51.4 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D libaudit=no -D modem_manager=false && sudo ninja install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/libnma/1.10/libnma-1.10.6.tar.xz && tar -xvf libnma-1.10.6.tar.xz && cd libnma-1.10.6 && "$autogen"
 wget https://download.gnome.org/sources/network-manager-applet/1.36/network-manager-applet-1.36.0.tar.xz && tar -xvf network-manager-applet-1.36.0.tar.xz && cd network-manager-applet-1.36.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D appindicator=no -D wwan=false && sudo ninja install && sudo ldconfig && cd ~/pre
-wget https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz && tar -xvf python-distutils-extra-2.39.tar.gz && cd python-distutils-extra-2.39 && "$python"
 wget https://download.gnome.org/sources/gtk-vnc/1.3/gtk-vnc-1.3.1.tar.xz && tar -xvf gtk-vnc-1.3.1.tar.xz && cd gtk-vnc-1.3.1 && "$meson"
-wget https://invisible-mirror.net/archives/xterm/xterm.tar.gz && tar -xvf xterm.tar.gz && cd xterm && ./configure --prefix=/usr --sysconfdir=/etc --enable-toolbar && sudo make install && sudo make install-ti && cp -v *.desktop ~/.local/share/applications/ && cd ~/pre
+wget https://invisible-mirror.net/archives/xterm/xterm.tar.gz && tar -xvf xterm.tar.gz && cd xterm-396 && ./configure --prefix=/usr --sysconfdir=/etc --enable-toolbar && sudo make install && sudo make install-ti && mkdir ~/.local/share/applications/ && cp -v *.desktop ~/.local/share/applications/ && cd ~/pre
 wget https://ftp.mozilla.org/pub/firefox/releases/133.0.3/linux-x86_64/id/firefox-133.0.3.tar.bz2 && tar -xvf firefox-133.0.3.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v *.desktop /usr/share/applications && cd ~
 
