@@ -153,7 +153,7 @@ wget https://download.gnome.org/sources/NetworkManager/1.51/NetworkManager-1.51.
 wget https://download.gnome.org/sources/libnma/1.10/libnma-1.10.6.tar.xz && tar -xvf libnma-1.10.6.tar.xz && cd libnma-1.10.6 && "$autogen"
 wget https://download.gnome.org/sources/network-manager-applet/1.36/network-manager-applet-1.36.0.tar.xz && tar -xvf network-manager-applet-1.36.0.tar.xz && cd network-manager-applet-1.36.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D appindicator=no -D wwan=false && sudo ninja install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/gtk-vnc/1.3/gtk-vnc-1.3.1.tar.xz && tar -xvf gtk-vnc-1.3.1.tar.xz && cd gtk-vnc-1.3.1 && "$meson"
-wget https://invisible-mirror.net/archives/xterm/xterm.tar.gz && tar -xvf xterm.tar.gz && cd xterm-396 && ./configure --prefix=/usr --sysconfdir=/etc --enable-toolbar && sudo make install && sudo make install-ti && mkdir ~/.local/share/applications/ && cp -v *.desktop ~/.local/share/applications/ && cd ~/pre
+wget https://invisible-mirror.net/archives/xterm/xterm-396.tar.gz && tar -xvf xterm-396.tar.gz && cd xterm-396 && ./configure --prefix=/usr --sysconfdir=/etc --enable-toolbar && sudo make install && sudo make install-ti && mkdir ~/.local/share/applications/ && cp -v *.desktop ~/.local/share/applications/ && cd ~/pre
 wget https://ftp.mozilla.org/pub/firefox/releases/133.0.3/linux-x86_64/id/firefox-133.0.3.tar.bz2 && tar -xvf firefox-133.0.3.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v *.desktop /usr/share/applications && cd ~
 
