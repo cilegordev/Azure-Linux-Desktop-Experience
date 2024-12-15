@@ -101,7 +101,7 @@ wget https://archive.xfce.org/xfce/4.20/src/tumbler-4.20.0.tar.bz2 && tar -xvf t
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-appfinder-4.20.0.tar.bz2 && tar -xvf xfce4-appfinder-4.20.0.tar.bz2 && cd xfce4-appfinder-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-power-manager-4.20.0.tar.bz2 && tar -xvf xfce4-power-manager-4.20.0.tar.bz2 && cd xfce4-power-manager-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-settings-4.20.0.tar.bz2 && tar -xvf xfce4-settings-4.20.0.tar.bz2 && cd xfce4-settings-4.20.0 && "$configure"
-wget https://archive.xfce.org/xfce/4.20/src/xfdesktop-4.20.0.tar.bz2 && tar -xvf xfdesktop-4.19.0.tar.bz2 && cd xfdesktop-4.19.0 && "$configure"
+wget https://archive.xfce.org/xfce/4.20/src/xfdesktop-4.20.0.tar.bz2 && tar -xvf xfdesktop-4.20.0.tar.bz2 && cd xfdesktop-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfwm4-4.20.0.tar.bz2 && tar -xvf xfwm4-4.20.0.tar.bz2 && cd xfwm4-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-session-4.20.0.tar.bz2 && tar -xvf xfce4-session-4.20.0.tar.bz2 && cd xfce4-session-4.20.0 && "$configure"
 
