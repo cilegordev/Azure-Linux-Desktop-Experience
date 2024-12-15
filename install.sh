@@ -75,7 +75,7 @@ sudo dnf -y remove vim meson xterm
 git clone https://github.com/mesonbuild/meson && cd meson && "$python"
 wget https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz && tar -xvf libdrm-2.4.124.tar.xz && cd libdrm-2.4.124.tar.xz && "$meson"
 git clone https://github.com/Lyude/mesa-utils && cd mesa-utils && "$meson"
-wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20241110.tar.gz && tar -xvf linux-firmware-20241110.tar.gz && cd linux-firmware-20241110 && sudo make install && cd ~/pre
+wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20241210.tar.gz && tar -xvf linux-firmware-20241210.tar.gz && cd linux-firmware-20241210 && sudo make install && cd ~/pre
 #your proc/gpu #git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-...intel/amdgpu/ati/nouveau/nv/i740/mach64/r128 && cd xf86-video-...intel/amdgpu/ati/nouveau/nv/i740/mach64/r128 && "$autogen"
 git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-fbdev && cd xf86-video-fbdev && "$autogen"
 git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-vesa && cd xf86-video-vesa && "$autogen"
@@ -94,7 +94,7 @@ wget https://download.gnome.org/sources/libwnck/43/libwnck-43.1.tar.xz && tar -x
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-dev-tools-4.20.0.tar.bz2 && tar -xvf xfce4-dev-tools-4.20.0.tar.bz2 && cd xfce4-dev-tools-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4windowing-4.20.0.tar.bz2 && tar -xvf libxfce4windowing-4.20.0.tar.bz2 && cd libxfce4windowing-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-panel-4.20.0.tar.bz2 && tar -xvf xfce4-panel-4.20.0.tar.bz2 && cd xfce4-panel-4.20.0 && "$configure"
-wget https://download.gnome.org/sources/gsettings-desktop-schemas/47/gsettings-desktop-schemas-47.tar.xz && tar -xvf gsettings-desktop-schemas-47.tar.xz && cd gsettings-desktop-schemas-47 && "$meson"
+wget https://download.gnome.org/sources/gsettings-desktop-schemas/47/gsettings-desktop-schemas-47.1.tar.xz && tar -xvf gsettings-desktop-schemas-47.1.tar.xz && cd gsettings-desktop-schemas-47.1 && "$meson"
 wget https://archive.xfce.org/xfce/4.20/src/thunar-4.20.0.tar.bz2 && tar -xvf thunar-4.20.0.tar.bz2 && cd thunar-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/thunar-volman-4.20.0.tar.bz2 && tar -xvf thunar-volman-4.20.0.tar.bz2 && cd thunar-volman-4.20.0 && "$configure"
 wget https://archive.xfce.org/xfce/4.20/src/tumbler-4.20.0.tar.bz2 && tar -xvf tumbler-4.20.0.tar.bz2 && cd tumbler-4.20.0 && "$configure"
@@ -106,17 +106,17 @@ wget https://archive.xfce.org/xfce/4.20/src/xfwm4-4.20.0.tar.bz2 && tar -xvf xfw
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-session-4.20.0.tar.bz2 && tar -xvf xfce4-session-4.20.0.tar.bz2 && cd xfce4-session-4.20.0 && "$configure"
 
 #xfce4-apps!
-wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.24.9.tar.xz && tar -xvf gstreamer-1.24.9.tar.xz && cd gstreamer-1.24.9 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc -D gst_debug=false && sudo ninja install && cd ~/pre
-wget https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.24.9.tar.xz && tar -xvf gst-plugins-base-1.24.9.tar.xz && cd gst-plugins-base-1.24.9 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --wrap-mode=nodownload && sudo ninja install && cd ~/pre
-wget https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.24.9.tar.xz && tar -xvf gst-plugins-good-1.24.9.tar.xz && cd gst-plugins-good-1.24.9 && "$meson"
-wget https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.24.9.tar.xz && tar -xvf gst-plugins-bad-1.24.9.tar.xz && cd gst-plugins-bad-1.24.9 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc -D gpl=enabled && sudo ninja install && cd ~/pre
+wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.24.10.tar.xz && tar -xvf gstreamer-1.24.10.tar.xz && cd gstreamer-1.24.10 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc -D gst_debug=false && sudo ninja install && cd ~/pre
+wget https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.24.10.tar.xz && tar -xvf gst-plugins-base-1.24.10.tar.xz && cd gst-plugins-base-1.24.10 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --wrap-mode=nodownload && sudo ninja install && cd ~/pre
+wget https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.24.10.tar.xz && tar -xvf gst-plugins-good-1.24.10.tar.xz && cd gst-plugins-good-1.24.10 && "$meson"
+wget https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.24.10.tar.xz && tar -xvf gst-plugins-bad-1.24.10.tar.xz && cd gst-plugins-bad-1.24.10 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc -D gpl=enabled && sudo ninja install && cd ~/pre
 wget https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.15.0.tar.xz && tar -xvf fontconfig-2.15.0.tar.xz && cd fontconfig-2.15.0 && "$configure"
-wget https://download.gnome.org/sources/pango/1.55/pango-1.55.0.tar.xz && tar -xvf pango-1.55.0.tar.xz && cd pango-1.55.0 && "$meson"
-wget https://download.gnome.org/sources/gtk/4.17/gtk-4.17.0.tar.xz && tar -xvf gtk-4.17.0.tar.xz && cd gtk-4.17.0 && mkdir build && cd build && meson setup --prefix=/usr --sysconfdir=/etc --buildtype=release -D broadway-backend=true -D introspection=enabled -D vulkan=disabled && sudo ninja install && sudo ldconfig && cd ~/pre
+wget https://download.gnome.org/sources/pango/1.55/pango-1.55.5.tar.xz && tar -xvf pango-1.55.5.tar.xz && cd pango-1.55.5 && "$meson"
+wget https://download.gnome.org/sources/gtk/4.17/gtk-4.17.1.tar.xz && tar -xvf gtk-4.17.1.tar.xz && cd gtk-4.17.1 && mkdir build && cd build && meson setup --prefix=/usr --sysconfdir=/etc --buildtype=release -D broadway-backend=true -D introspection=enabled -D vulkan=disabled && sudo ninja install && sudo ldconfig && cd ~/pre
 cd Azure-Linux-Desktop-Experience/gtk4-layer-shell && "$meson"
 wget https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.4.tar.xz && tar -xvf gtksourceview-4.8.4.tar.xz && cd gtksourceview-4.8.4 && "$meson"
 wget https://archive.xfce.org/src/apps/mousepad/0.6/mousepad-0.6.3.tar.bz2 && tar -xvf mousepad-0.6.3.tar.bz2 && cd mousepad-0.6.3 && "$configure"
-wget https://archive.xfce.org/src/apps/xfce4-terminal/0.9/xfce4-terminal-0.9.1.tar.bz2 && tar -xvf xfce4-terminal-0.9.1.tar.bz2 && cd xfce4-terminal-0.9.1 && "$configure"
+wget https://archive.xfce.org/src/apps/xfce4-terminal/1.1/xfce4-terminal-1.1.3.tar.bz2 && tar -xvf xfce4-terminal-1.1.3.tar.bz2 && cd xfce4-terminal-1.1.3 && "$configure"
 wget https://archive.xfce.org/src/apps/xfce4-taskmanager/1.5/xfce4-taskmanager-1.5.7.tar.bz2 && tar -xvf xfce4-taskmanager-1.5.7.tar.bz2 && cd xfce4-taskmanager-1.5.7 && "$configure"
 wget https://archive.xfce.org/src/apps/parole/4.18/parole-4.18.1.tar.bz2 && tar -xvf parole-4.18.1.tar.bz2 && cd parole-4.18.1 && "$configure"
 wget https://archive.xfce.org/src/apps/xfburn/0.7/xfburn-0.7.2.tar.bz2 && tar -xvf xfburn-0.7.2.tar.bz2 && cd xfburn-0.7.2 && "$configure"
@@ -126,7 +126,7 @@ wget https://archive.xfce.org/src/thunar-plugins/thunar-archive-plugin/0.5/thuna
 wget https://archive.xfce.org/src/apps/xfce4-screenshooter/1.11/xfce4-screenshooter-1.11.1.tar.bz2 && tar -xvf xfce4-screenshooter-1.11.1.tar.bz2 && cd xfce4-screenshooter-1.11.1 && "$configure"
 wget https://archive.xfce.org/src/apps/xfce4-notifyd/0.9/xfce4-notifyd-0.9.6.tar.bz2 && tar -xvf xfce4-notifyd-0.9.6.tar.bz2 && cd xfce4-notifyd-0.9.6 && "$configure"
 wget https://archive.xfce.org/src/apps/xfce4-panel-profiles/1.0/xfce4-panel-profiles-1.0.14.tar.bz2 && tar -xvf xfce4-panel-profiles-1.0.14.tar.bz2 && cd xfce4-panel-profiles-1.0.14 && ./configure --prefix=/usr && sudo make install && sudo ldconfig && cd ~/pre
-wget https://archive.xfce.org/src/panel-plugins/xfce4-pulseaudio-plugin/0.4/xfce4-pulseaudio-plugin-0.4.8.tar.bz2 && tar -xvf xfce4-pulseaudio-plugin-0.4.8.tar.bz2 && cd xfce4-pulseaudio-plugin-0.4.8 && "$configure"
+wget https://archive.xfce.org/src/panel-plugins/xfce4-pulseaudio-plugin/0.4/xfce4-pulseaudio-plugin-0.4.9.tar.bz2 && tar -xvf xfce4-pulseaudio-plugin-0.4.9.tar.bz2 && cd xfce4-pulseaudio-plugin-0.4.9 && "$configure"
 wget https://www.freedesktop.org/software/accountsservice/accountsservice-22.08.8.tar.xz && tar -xvf accountsservice-22.08.8.tar.xz && cd accountsservice-22.08.8 && "$meson"
 wget https://archive.xfce.org/src/panel-plugins/xfce4-whiskermenu-plugin/2.8/xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && tar -xvf xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && cd xfce4-whiskermenu-plugin-2.8.3 && "$cmake"
 cd Azure-Linux-Desktop-Experience/mugshot && "$python"
@@ -151,8 +151,8 @@ wget https://download.gnome.org/sources/libnma/1.10/libnma-1.10.6.tar.xz && tar 
 wget https://download.gnome.org/sources/network-manager-applet/1.36/network-manager-applet-1.36.0.tar.xz && tar -xvf network-manager-applet-1.36.0.tar.xz && cd network-manager-applet-1.36.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D appindicator=no -D wwan=false && sudo ninja install && sudo ldconfig && cd ~/pre
 wget https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz && tar -xvf python-distutils-extra-2.39.tar.gz && cd python-distutils-extra-2.39 && "$python"
 wget https://download.gnome.org/sources/gtk-vnc/1.3/gtk-vnc-1.3.1.tar.xz && tar -xvf gtk-vnc-1.3.1.tar.xz && cd gtk-vnc-1.3.1 && "$meson"
-wget https://invisible-mirror.net/archives/xterm/xterm-396.tgz && tar -xvf xterm-396.tgz && cd xterm-396 && ./configure --prefix=/usr --sysconfdir=/etc --enable-toolbar && sudo make install && sudo make install-ti && cp -v *.desktop ~/.local/share/applications/ && cd ~/pre
-wget https://ftp.mozilla.org/pub/firefox/releases/133.0/linux-x86_64/id/firefox-133.0.tar.bz2 && tar -xvf firefox-133.0.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
+wget https://invisible-mirror.net/archives/xterm/xterm.tar.gz && tar -xvf xterm.tar.gz && cd xterm && ./configure --prefix=/usr --sysconfdir=/etc --enable-toolbar && sudo make install && sudo make install-ti && cp -v *.desktop ~/.local/share/applications/ && cd ~/pre
+wget https://ftp.mozilla.org/pub/firefox/releases/133.0.3/linux-x86_64/id/firefox-133.0.3.tar.bz2 && tar -xvf firefox-133.0.3.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v *.desktop /usr/share/applications && cd ~
 
 #setup-x11!
