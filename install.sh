@@ -48,7 +48,7 @@ sudo mkdir /usr/share/icons
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/fonts
 cd ~/pre
-git clone --recurse-submodules https://github.com/cilegordev/Azure-Linux-Desktop-Experience
+git clone --recurse-submodules --branch=Wayland https://github.com/cilegordev/Azure-Linux-Desktop-Experience
 cd Azure-Linux-Desktop-Experience/azurelinux-repo && sudo rm -rfv /etc/yum.repos.d/* && sudo mv -v *.repo /etc/yum.repos.d && cd ~/pre
 cd Azure-Linux-Desktop-Experience/Flat-Adwaita && sudo mv -v Adwaita-dark-PONIES /usr/share/themes && sudo mv -v Flat-ZOMG-dark /usr/share/icons && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v img0.png /usr/share/backgrounds/ && cd ~/pre
@@ -77,11 +77,13 @@ git clone https://gitlab.freedesktop.org/wlroots/wlroots && cd wlroots && git ch
 git clone https://github.com/labwc/labwc && cd labwc && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release && sudo ninja install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4util-4.20.0.tar.bz2 && tar -xvf libxfce4util-4.20.0.tar.bz2 && cd libxfce4util-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/xfconf-4.20.0.tar.bz2 && tar -xvf xfconf-4.20.0.tar.bz2 && cd xfconf-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
+wget https://download.gnome.org/sources/libgtop/2.41/libgtop-2.41.3.tar.xz && tar -xvf libgtop-2.41.3.tar.xz && cd libgtop-2.41.3 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4ui-4.20.0.tar.bz2 && tar -xvf libxfce4ui-4.20.0.tar.bz2 && cd libxfce4ui-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/exo-4.20.0.tar.bz2 && tar -xvf exo-4.20.0.tar.bz2 && cd exo-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/garcon-4.20.0.tar.bz2 && tar -xvf garcon-4.20.0.tar.bz2 && cd garcon-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://download.gnome.org/sources/libwnck/43/libwnck-43.1.tar.xz && tar -xvf libwnck-43.1.tar.xz && cd libwnck-43.1 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release && sudo ninja install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-dev-tools-4.20.0.tar.bz2 && tar -xvf xfce4-dev-tools-4.20.0.tar.bz2 && cd xfce4-dev-tools-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
+wget https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/0.2.0/libdisplay-info-0.2.0.tar.gz && tar -xvf libdisplay-info-0.2.0.tar.gz && cd libdisplay-info-0.2.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release && sudo ninja install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4windowing-4.20.0.tar.bz2 && tar -xvf libxfce4windowing-4.20.0.tar.bz2 && cd libxfce4windowing-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/xfce4-panel-4.20.0.tar.bz2 && tar -xvf xfce4-panel-4.20.0.tar.bz2 && cd xfce4-panel-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre 
 wget https://archive.xfce.org/src/apps/xfce4-panel-profiles/1.0/xfce4-panel-profiles-1.0.14.tar.bz2 && tar -xvf xfce4-panel-profiles-1.0.14.tar.bz2 && cd xfce4-panel-profiles-1.0.14 && ./configure --prefix=/usr && sudo make install && cd ~/pre 
@@ -118,6 +120,7 @@ wget https://archive.xfce.org/src/apps/xfce4-notifyd/0.9/xfce4-notifyd-0.9.6.tar
 wget https://archive.xfce.org/src/panel-plugins/xfce4-pulseaudio-plugin/0.4/xfce4-pulseaudio-plugin-0.4.9.tar.bz2 && tar -xvf xfce4-pulseaudio-plugin-0.4.9.tar.bz2 && cd xfce4-pulseaudio-plugin-0.4.9 && ./configure --prefix=/usr && sudo make install && cd ~/pre
 wget https://www.freedesktop.org/software/accountsservice/accountsservice-22.08.8.tar.xz && tar -xvf accountsservice-22.08.8.tar.xz && cd accountsservice-22.08.8 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release && sudo ninja install && cd ~/pre
 wget https://archive.xfce.org/src/panel-plugins/xfce4-whiskermenu-plugin/2.8/xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && tar -xvf xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && cd xfce4-whiskermenu-plugin-2.8.3 && mkdir build && cd build && cmake .. --install-prefix=/usr && sudo make install && cd ~/pre
+wget https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz && tar -xvf python-distutils-extra-2.39.tar.gz && cd python-distutils-extra-2.39 && sudo chmod +x setup.py && sudo python3 setup.py install && cd ~/pre
 cd Azure-Linux-Desktop-Experience/mugshot && sudo chmod +x setup.py && sudo python3 setup.py install && cd ~/pre
 wget https://archive.xfce.org/src/panel-plugins/xfce4-cpugraph-plugin/1.2/xfce4-cpugraph-plugin-1.2.8.tar.bz2 && tar -xvf xfce4-cpugraph-plugin-1.2.8.tar.bz2 && cd xfce4-cpugraph-plugin-1.2.8 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/src/panel-plugins/xfce4-clipman-plugin/1.6/xfce4-clipman-plugin-1.6.6.tar.bz2 && tar -xvf xfce4-clipman-plugin-1.6.6.tar.bz2 && cd xfce4-clipman-plugin-1.6.6 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
@@ -134,7 +137,6 @@ wget https://www.freedesktop.org/software/pulseaudio/pavucontrol/pavucontrol-6.1
 wget https://download.gnome.org/sources/NetworkManager/1.51/NetworkManager-1.51.4.tar.xz && tar -xvf NetworkManager-1.51.4.tar.xz && cd NetworkManager-1.51.4 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D libaudit=no -D modem_manager=false && sudo ninja install && cd ~/pre
 wget https://download.gnome.org/sources/libnma/1.10/libnma-1.10.6.tar.xz && tar -xvf libnma-1.10.6.tar.xz && cd libnma-1.10.6 && ./autogen.sh --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://download.gnome.org/sources/network-manager-applet/1.36/network-manager-applet-1.36.0.tar.xz && tar -xvf network-manager-applet-1.36.0.tar.xz && cd network-manager-applet-1.36.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D appindicator=no -D wwan=false && sudo ninja install && cd ~/pre
-wget https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz && tar -xvf python-distutils-extra-2.39.tar.gz && cd python-distutils-extra-2.39 && sudo chmod +x setup.py && sudo python3 setup.py install && cd ~/pre
 wget https://ftp.mozilla.org/pub/firefox/releases/133.0/linux-x86_64/id/firefox-133.0.tar.bz2 && tar -xvf firefox-133.0.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
 #setup-wayland!
 echo -e "XTerm*mainMenu: true \nXTerm*ToolBar: true \nXTerm*Background: black \nXTerm*Foreground: white" | tee -a ~/.Xdefaults
