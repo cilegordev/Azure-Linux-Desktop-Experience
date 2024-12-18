@@ -52,7 +52,7 @@ git clone --recurse-submodules --branch=Wayland https://github.com/cilegordev/Az
 cd Azure-Linux-Desktop-Experience/azurelinux-repo && sudo rm -rfv /etc/yum.repos.d/* && sudo mv -v *.repo /etc/yum.repos.d && cd ~/pre
 cd Azure-Linux-Desktop-Experience/Flat-Adwaita && sudo mv -v Adwaita-dark-PONIES /usr/share/themes && sudo mv -v Flat-ZOMG-dark /usr/share/icons && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v img0.png /usr/share/backgrounds/ && cd ~/pre
-cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv xfce4 ~/.config && sudo mv -v zsh* /usr/share/ && cd ~/pre
+cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv xfce4 ~/.config && cp -rv labwc ~/.config && sudo mv -v zsh* /usr/share/ && cd ~/pre
 cd Azure-Linux-Desktop-Experience/neofetch && sudo make install && cd ~/pre
 sudo mkdir /usr/share/fonts/PlusJakartaSans && cd Azure-Linux-Desktop-Experience/PlusJakartaSans/fonts/ttf/ && sudo mv -v *.ttf /usr/share/fonts/PlusJakartaSans && cd ~/pre
 #dependencies-required!
@@ -75,6 +75,7 @@ git clone https://gitlab.freedesktop.org/emersion/libliftoff && cd libliftoff &&
 git clone https://github.com/kennylevinsen/seatd && cd seatd && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release && sudo ninja install && cd ~/pre
 git clone https://gitlab.freedesktop.org/wlroots/wlroots && cd wlroots && git checkout 0.18 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release && sudo ninja install && cd ~/pre
 git clone https://github.com/labwc/labwc && cd labwc && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release && sudo ninja install && cd ~/pre
+wget https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.43.tar.xz && tar -xvf gtk+-3.24.43.tar.xz && cd gtk+-3.24.43.tar.xz && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D broadway_backend=true && sudo ninja install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4util-4.20.0.tar.bz2 && tar -xvf libxfce4util-4.20.0.tar.bz2 && cd libxfce4util-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/xfconf-4.20.0.tar.bz2 && tar -xvf xfconf-4.20.0.tar.bz2 && cd xfconf-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
 wget https://download.gnome.org/sources/libgtop/2.41/libgtop-2.41.3.tar.xz && tar -xvf libgtop-2.41.3.tar.xz && cd libgtop-2.41.3 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make install && cd ~/pre
