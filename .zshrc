@@ -258,6 +258,7 @@ alias s='sudo'
 alias ex='exit'
 alias ssr='sudo rm -rfv'
 alias ext='tar -xvf'
+alias chown='sudo chown -R'
 alias reboot='sudo init 6'
 alias poweroff='sudo init 0'
 
