@@ -141,6 +141,7 @@ wget https://download.gnome.org/sources/network-manager-applet/1.36/network-mana
 wget https://ftp.mozilla.org/pub/firefox/releases/133.0/linux-x86_64/id/firefox-133.0.tar.bz2 && tar -xvf firefox-133.0.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
 #setup-wayland!
 echo -e "XTerm*mainMenu: true \nXTerm*ToolBar: true \nXTerm*Background: black \nXTerm*Foreground: white" | tee -a ~/.Xdefaults
+echo -e "pulseaudio --start \nexec dbus-launch startxfce4" | tee -a ~/.xinitrc
 echo -e 'if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then\n    startxfce4 --wayland\nfi' >> ~/.bash_profile
 echo -e 'if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then\n    startxfce4 --wayland\nfi' >> ~/.zprofile
 chsh -s $(which zsh)
