@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="64" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17">
+  <defs>
+    <linearGradient id="linearGradient3008" x1="21.19" x2="22.269" y1="11.457" y2="8.7909" gradientTransform="matrix(4.2311, 0, 0, 4.2311, -86.556365, -34.631996)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b4327d" offset="0"/>
+      <stop stop-color="#b4191e" offset="0.5563"/>
+      <stop stop-color="#820a05" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient3028" x1="21.609" x2="22.791" y1="11.283" y2="11.837" gradientTransform="matrix(4.2311, 0, 0, 4.2311, -86.556365, -34.631996)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eb233c" offset="0"/>
+      <stop stop-color="#910505" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient3018" x1="23.72" x2="22.786" y1="11.696" y2="8.4789" gradientTransform="matrix(4.2311, 0, 0, 4.2311, -86.556365, -34.631996)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c72b0c" offset="0"/>
+      <stop stop-color="#cc3206" offset="0.5135"/>
+      <stop stop-color="#e58102" offset="1"/>
+    </linearGradient>
+  </defs>
+  <path d="M 10.302 3.622 L 6.679 5.044 C 6.679 5.044 5.767 5.406 5.767 5.835 L 5.767 11.162 C 5.767 11.162 5.793 11.445 5.708 11.521 C 5.622 11.597 4.019 12.622 4.019 12.622 C 4.019 12.622 3.644 12.726 3.434 12.622 C 3.224 12.518 3.001 12.326 3.001 12.122 L 3.001 5.104 C 3.001 5.104 2.977 4.422 3.181 4.249 C 3.385 4.076 8.257 1.318 8.257 1.318 C 8.257 1.318 8.658 1.086 9.254 1.248 C 9.814 1.401 10.53 1.76 10.301 3.622 L 10.302 3.622 Z" fill="url(#linearGradient3008)" stroke-width="4.2311"/>
+  <path d="M 10.187 12.743 L 5.565 12.743 C 5.565 12.743 5.153 12.717 4.987 13.014 C 4.821 13.311 4.847 13.661 4.996 13.766 C 5.145 13.871 8.215 15.603 8.337 15.664 C 8.459 15.725 8.967 15.848 9.461 15.555 C 10.257 15.222 10.238 14.925 10.185 13.884 C 10.185 13.103 10.192 13.025 10.187 12.743 Z" fill="url(#linearGradient3028)" stroke-width="4.2311"/>
+  <path d="M 9.227 1.243 C 9.227 1.243 10.163 1.569 10.163 2.284 C 10.163 2.284 10.163 9.893 10.163 14.624 C 10.163 15.148 9.691 15.482 9.035 15.718 L 13.316 14.424 C 13.316 14.424 14.191 14.197 14.191 13.322 L 14.191 3.899 C 14.191 3.899 14.263 2.916 13.62 2.625 C 12.977 2.334 9.227 1.243 9.227 1.243 Z" fill="url(#linearGradient3018)" stroke-width="4.2311"/>
+</svg>

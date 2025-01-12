@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+  This is a very simple config file with many options missing. For a complete
+  set of options with comments, see docs/rc.xml.all
+-->
+<labwc_config>
+  <theme>
+    <name>Adwaita-dark-PONIES</name>
+    <cornerRadius>0</cornerRadius>
+    <dropShadows>yes</dropShadows>
+    <keepBorder>no</keepBorder>
+  </theme>
+</labwc_config>

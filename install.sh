@@ -60,11 +60,11 @@ sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/fonts
 cd ~/pre
 git clone --recurse-submodules --branch=Experimental https://github.com/cilegordev/Azure-Linux-Desktop-Experience
-cd Azure-Linux-Desktop-Experience/Flat-Adwaita && sudo mv -v Adwaita-dark-PONIES /usr/share/themes && sudo mv -v Flat-ZOMG-dark /usr/share/icons && cd ~/pre
+cd Azure-Linux-Desktop-Experience/sub/Flat-Adwaita && sudo mv -v Adwaita-dark-PONIES /usr/share/themes && sudo mv -v Flat-ZOMG-dark /usr/share/icons && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v img0.png /usr/share/backgrounds/ && cd ~/pre
-cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv xfce4 ~/.config && cp -rv labwc ~/.config && sudo mv -v zsh* /usr/share/ && cd ~/pre
-cd Azure-Linux-Desktop-Experience/neofetch && sudo make install && cd ~/pre
-sudo mkdir /usr/share/fonts/PlusJakartaSans && cd Azure-Linux-Desktop-Experience/PlusJakartaSans/fonts/ttf/ && sudo mv -v *.ttf /usr/share/fonts/PlusJakartaSans && cd ~/pre
+cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv src/xfce4 ~/.config && cp -rv src/labwc ~/.config && sudo mv -v src/zsh* /usr/share/ && cd ~/pre
+cd Azure-Linux-Desktop-Experience/sub/neofetch && sudo make install && cd ~/pre
+sudo mkdir /usr/share/fonts/PlusJakartaSans && cd Azure-Linux-Desktop-Experience/sub/PlusJakartaSans/fonts/ttf/ && sudo mv -v *.ttf /usr/share/fonts/PlusJakartaSans && cd ~/pre
 
 #dependencies-required!
 sudo dnf -y install adwaita* alsa* asciidoc* cairo* cryptsetup-devel dbus* dejavu* desktop-file-utils* device-mapper* drm* doxygen e2fsprogs* flac* *font* fribidi* gdbm* gdk* glibmm* gnome* gnutls* gobject-introspection* gperf* graphene* gsettings* gspell* gst* gtk* harfbuzz* htop hwdata* intltool* iso-codes* itstool* jansson* kernel-drivers* kmod* libICE* libSM* libX* libXtst* libarchive* libatasmart* libyaml* libburn* libbytesize* libcanberra* libcap* libcdio* libdbus* libdvd* libedit* libexif* libgcrypt* libgudev* libinput* libisofs* libjpeg* libltdl* libndp* linux-firmware* libnotify* libnvme* libogg* libpng* libpsl* librs* libsecret* libsndfile* libsoup* libusb* libva* libvorbis* libvpx* libvte* libxcrypt* libxk* lynx lz* mesa* meson* mm-common mobile* nasm* ncurses* ndctl* newt* nspr* nss* nano pam* pcre2* perl-XML-Parser* polkit* ppp* pulseaudio* python3-devel python3-gobject* python3-pexpect python3-psutil sound* upower* vala* vte* vulkan* wayland* xcb* xcursor-themes xdg* xkeyboard* xmlto xorg* zsh --skip-broken && cd ~/pre
@@ -83,7 +83,7 @@ git clone https://gitlab.freedesktop.org/xorg/driver/xf86-video-dummy && cd xf86
 git clone https://github.com/Hummer12007/brightnessctl && cd brightnessctl && ./configure --prefix=/usr && make install && sudo ldconfig && cd ~/pre
 
 #xfce4-component!
-cd Azure-Linux-Desktop-Experience/gtk-layer-shell && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
+cd Azure-Linux-Desktop-Experience/sub/gtk-layer-shell && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.43.tar.xz && tar -xvf gtk+-3.24.43.tar.xz && cd gtk+-3.24.43.tar.xz && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D broadway_backend=true && sudo ninja install && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/libxfce4util-4.20.0.tar.bz2 && tar -xvf libxfce4util-4.20.0.tar.bz2 && cd libxfce4util-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/xfce/4.20/src/xfconf-4.20.0.tar.bz2 && tar -xvf xfconf-4.20.0.tar.bz2 && cd xfconf-4.20.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
@@ -115,7 +115,7 @@ wget https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.24.
 wget https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.15.0.tar.xz && tar -xvf fontconfig-2.15.0.tar.xz && cd fontconfig-2.15.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/pango/1.55/pango-1.55.5.tar.xz && tar -xvf pango-1.55.5.tar.xz && cd pango-1.55.5 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/gtk/4.17/gtk-4.17.1.tar.xz && tar -xvf gtk-4.17.1.tar.xz && cd gtk-4.17.1 && mkdir build && cd build && meson setup --prefix=/usr --sysconfdir=/etc --buildtype=release -D broadway-backend=true -D introspection=enabled -D vulkan=disabled && sudo ninja install && sudo ldconfig && cd ~/pre
-cd Azure-Linux-Desktop-Experience/gtk4-layer-shell && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
+cd Azure-Linux-Desktop-Experience/sub/gtk4-layer-shell && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/gtksourceview/4.8/gtksourceview-4.8.4.tar.xz && tar -xvf gtksourceview-4.8.4.tar.xz && cd gtksourceview-4.8.4 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/apps/mousepad/0.6/mousepad-0.6.3.tar.bz2 && tar -xvf mousepad-0.6.3.tar.bz2 && cd mousepad-0.6.3 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/apps/xfce4-terminal/1.1/xfce4-terminal-1.1.3.tar.bz2 && tar -xvf xfce4-terminal-1.1.3.tar.bz2 && cd xfce4-terminal-1.1.3 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
@@ -123,7 +123,7 @@ wget https://archive.xfce.org/src/apps/xfce4-taskmanager/1.5/xfce4-taskmanager-1
 wget https://archive.xfce.org/src/apps/parole/4.18/parole-4.18.1.tar.bz2 && tar -xvf parole-4.18.1.tar.bz2 && cd parole-4.18.1 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/apps/xfburn/0.7/xfburn-0.7.2.tar.bz2 && tar -xvf xfburn-0.7.2.tar.bz2 && cd xfburn-0.7.2 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/apps/ristretto/0.13/ristretto-0.13.2.tar.bz2 && tar -xvf ristretto-0.13.2.tar.bz2 && cd ristretto-0.13.2 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
-cd Azure-Linux-Desktop-Experience/xarchiver && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
+cd Azure-Linux-Desktop-Experience/sub/xarchiver && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/thunar-plugins/thunar-archive-plugin/0.5/thunar-archive-plugin-0.5.2.tar.bz2 && tar -xvf thunar-archive-plugin-0.5.2.tar.bz2 && cd thunar-archive-plugin-0.5.2 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/apps/xfce4-screenshooter/1.11/xfce4-screenshooter-1.11.1.tar.bz2 && tar -xvf xfce4-screenshooter-1.11.1.tar.bz2 && cd xfce4-screenshooter-1.11.1 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/apps/xfce4-notifyd/0.9/xfce4-notifyd-0.9.6.tar.bz2 && tar -xvf xfce4-notifyd-0.9.6.tar.bz2 && cd xfce4-notifyd-0.9.6 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
@@ -132,19 +132,19 @@ wget https://archive.xfce.org/src/panel-plugins/xfce4-pulseaudio-plugin/0.4/xfce
 wget https://www.freedesktop.org/software/accountsservice/accountsservice-22.08.8.tar.xz && tar -xvf accountsservice-22.08.8.tar.xz && cd accountsservice-22.08.8 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/panel-plugins/xfce4-whiskermenu-plugin/2.8/xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && tar -xvf xfce4-whiskermenu-plugin-2.8.3.tar.bz2 && cd xfce4-whiskermenu-plugin-2.8.3 && mkdir build && cd build && cmake .. --install-prefix=/usr && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz && tar -xvf python-distutils-extra-2.39.tar.gz && cd python-distutils-extra-2.39 && sudo chmod +x setup.py && sudo python3 setup.py install && sudo ldconfig && cd ~/pre
-cd Azure-Linux-Desktop-Experience/mugshot && sudo chmod +x setup.py && sudo python3 setup.py install && sudo ldconfig && cd ~/pre
+cd Azure-Linux-Desktop-Experience/sub/mugshot && sudo chmod +x setup.py && sudo python3 setup.py install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/gnome-menus/3.36/gnome-menus-3.36.0.tar.xz && tar -xvf gnome-menus-3.36.0.tar.xz && cd gnome-menus-3.36.0 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
-cd Azure-Linux-Desktop-Experience/menulibre && sudo chmod +x setup.py && sudo python3 setup.py install && sudo ldconfig && cd ~/pre
+cd Azure-Linux-Desktop-Experience/sub/menulibre && sudo chmod +x setup.py && sudo python3 setup.py install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/panel-plugins/xfce4-cpugraph-plugin/1.2/xfce4-cpugraph-plugin-1.2.8.tar.bz2 && tar -xvf xfce4-cpugraph-plugin-1.2.8.tar.bz2 && cd xfce4-cpugraph-plugin-1.2.8 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/panel-plugins/xfce4-clipman-plugin/1.6/xfce4-clipman-plugin-1.6.6.tar.bz2 && tar -xvf xfce4-clipman-plugin-1.6.6.tar.bz2 && cd xfce4-clipman-plugin-1.6.6 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.2.tar.bz2 && tar -xvf xfce4-docklike-plugin-0.4.2.tar.bz2 && cd xfce4-docklike-plugin-0.4.2 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://archive.xfce.org/src/panel-plugins/xfce4-netload-plugin/1.4/xfce4-netload-plugin-1.4.1.tar.bz2 && tar -xvf xfce4-netload-plugin-1.4.1.tar.bz2 && cd xfce4-netload-plugin-1.4.1 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
 
 #extended-apps!
-cd Azure-Linux-Desktop-Experience/xdotool && sudo make install && sudo ldconfig && cd ~/pre
+cd Azure-Linux-Desktop-Experience/sub/xdotool && sudo make install && sudo ldconfig && cd ~/pre
 wget https://github.com/storaged-project/libblockdev/releases/download/3.2.1/libblockdev-3.2.1.tar.gz && tar -xvf libblockdev-3.2.1.tar.gz && cd libblockdev-3.2.1 && ./configure --prefix=/usr --sysconfdir=/etc --without-escrow && sudo make install && sudo ldconfig && cd ~/pre
 wget https://github.com/storaged-project/udisks/releases/download/udisks-2.10.1/udisks-2.10.1.tar.bz2 && tar -xvf udisks-2.10.1.tar.bz2 && cd udisks-2.10.1 && ./configure --prefix=/usr --sysconfdir=/etc && sudo make -j$(nproc) install && sudo ldconfig && cd ~/pre
-cd Azure-Linux-Desktop-Experience/xfce-polkit && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
+cd Azure-Linux-Desktop-Experience/sub/xfce-polkit && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/gcr/4.3/gcr-4.3.0.tar.xz && tar -xvf gcr-4.3.0.tar.xz && cd gcr-4.3.0 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D gtk_doc=false && sudo ninja install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/gvfs/1.56/gvfs-1.56.1.tar.xz && tar -xvf gvfs-1.56.1.tar.xz && cd gvfs-1.56.1 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc --buildtype=release -D onedrive=false -D fuse=false -D gphoto2=false -D afc=false -D bluray=false -D nfs=false -D mtp=false -D smb=false -D tmpfilesdir=no -D dnssd=false -D goa=false -D google=false && sudo ninja install && sudo ldconfig && cd ~/pre
 wget https://download.gnome.org/sources/atkmm/2.36/atkmm-2.36.3.tar.xz && tar -xvf atkmm-2.36.3.tar.xz && cd atkmm-2.36.3 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
@@ -158,7 +158,7 @@ wget https://download.gnome.org/sources/network-manager-applet/1.36/network-mana
 wget https://download.gnome.org/sources/gtk-vnc/1.3/gtk-vnc-1.3.1.tar.xz && tar -xvf gtk-vnc-1.3.1.tar.xz && cd gtk-vnc-1.3.1 && mkdir build && cd build && meson setup .. --prefix=/usr --sysconfdir=/etc && sudo ninja -j$(nproc) install && sudo ldconfig && cd ~/pre
 wget https://invisible-mirror.net/archives/xterm/xterm-396.tar.gz && tar -xvf xterm-396.tar.gz && cd xterm-396 && ./configure --prefix=/usr --sysconfdir=/etc --enable-toolbar && sudo make install && sudo make install-ti && mkdir ~/.local/share/applications/ && cp -v *.desktop ~/.local/share/applications/ && cd ~/pre
 wget https://ftp.mozilla.org/pub/firefox/releases/134.0/linux-x86_64/id/firefox-134.0.tar.bz2 && tar -xvf firefox-134.0.tar.bz2 && sudo mv -v firefox /opt && sudo ln -sv /opt/firefox/firefox /bin && sudo ln -sv /opt/firefox/firefox-bin /bin/mozilla-firefox && cd ~/pre
-cd Azure-Linux-Desktop-Experience && sudo mv -v *.desktop /usr/share/applications && cd ~
+cd Azure-Linux-Desktop-Experience && sudo mv -v src/*.desktop /usr/share/applications && cd ~
 
 #setup-x11!
 echo -e "XTerm*mainMenu: true \nXTerm*ToolBar: true \nXTerm*Background: black \nXTerm*Foreground: white \nXTerm*borderColor: white \nXTerm*allowWindowOps: true \nXTerm*VT100*locale: true \nXTerm*VT100*faceName: Monospace \nXTerm*VT100*faceSize: 12 \nXTerm*backarrowKeyIsErase: true" | tee -a ~/.Xdefaults

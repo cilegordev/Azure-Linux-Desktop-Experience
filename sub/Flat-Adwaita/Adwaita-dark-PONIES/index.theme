@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Adwaita-dark-PONIES
+Comment=Flat modern design
+Encoding=UTF-8
+
+
+[X-GNOME-Metatheme]
+Name=Adwaita-dark-PONIES
+Encoding=UTF-8
+GtkTheme=Adwaita-dark-PONIES
+MetacityTheme=Adwaita-dark-PONIES
+IconTheme=Flat-ZOMG-dark
+CursorTheme=Adwaita
+CursorSize=16
+ButtonLayout=:minimize,maximize,close

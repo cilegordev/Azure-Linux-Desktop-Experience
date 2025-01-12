@@ -1,30 +1,30 @@
 [submodule "Flat-Adwaita"]
-	path = Flat-Adwaita
+	path = sub/Flat-Adwaita
 	url = https://github.com/cilegordev/Flat-Adwaita
 [submodule "neofetch"]
-	path = neofetch
+	path = sub/neofetch
 	url = https://github.com/cilegordev/neofetch
 [submodule "xfce4-polkit"]
-	path = xfce4-polkit
+	path = sub/xfce4-polkit
 	url = https://github.com/cilegordev/xfce4-polkit
 [submodule "PlusJakartaSans"]
-	path = PlusJakartaSans
+	path = sub/PlusJakartaSans
 	url = https://github.com/tokotype/PlusJakartaSans/
 [submodule "xarchiver"]
-	path = xarchiver
+	path = sub/xarchiver
 	url = https://github.com/ib/xarchiver/
 [submodule "gtk4-layer-shell"]
-	path = gtk4-layer-shell
+	path = sub/gtk4-layer-shell
 	url = https://github.com/wmww/gtk4-layer-shell
 [submodule "gtk-layer-shell"]
-	path = gtk-layer-shell
+	path = sub/gtk-layer-shell
 	url = https://github.com/wmww/gtk-layer-shell
 [submodule "mugshot"]
-	path = mugshot
+	path = sub/mugshot
 	url = https://github.com/bluesabre/mugshot
 [submodule "menulibre"]
-	path = menulibre
+	path = sub/menulibre
 	url = https://github.com/bluesabre/menulibre
 [submodule "xdotool"]
-	path = xdotool
+	path = sub/xdotool
 	url = https://github.com/jordansissel/xdotool

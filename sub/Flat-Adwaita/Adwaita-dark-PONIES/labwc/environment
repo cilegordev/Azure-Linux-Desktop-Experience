@@ -1,0 +1,14 @@
+### Example ~/.config/labwc/environment file. ###
+
+XKB_DEFAULT_LAYOUT=us
+# XKB_DEFAULT_LAYOUT=se,us(intl)
+# XKB_DEFAULT_OPTIONS=grp:alt_shift_toggle
+# XKB_DEFAULT_OPTIONS=grp:shift_caps_toggle
+XCURSOR_THEME=Adwaita
+XCURSOR_THEME=Adwaita
+XCURSOR_SIZE=16
+# WLR_NO_HARDWARE_CURSORS=1
+# _JAVA_AWT_WM_NONREPARENTING=0
+XDG_CURRENT_DESKTOP=wlroots wm
+# LABWC_FALLBACK_OUTPUT=NOOP-fallback
+
