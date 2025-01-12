@@ -61,8 +61,8 @@ sudo mkdir /usr/share/fonts
 cd ~/pre
 git clone --recurse-submodules --branch=Experimental https://github.com/cilegordev/Azure-Linux-Desktop-Experience
 cd Azure-Linux-Desktop-Experience/sub/Flat-Adwaita && sudo mv -v Adwaita-dark-PONIES /usr/share/themes && sudo mv -v Flat-ZOMG-dark /usr/share/icons && cd ~/pre
-cd Azure-Linux-Desktop-Experience && sudo mv -v img0.png /usr/share/backgrounds/ && cd ~/pre
-cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv src/xfce4 ~/.config && cp -rv src/labwc ~/.config && sudo mv -v src/zsh* /usr/share/ && cd ~/pre
+cd Azure-Linux-Desktop-Experience && sudo mv -v src/img0.png /usr/share/backgrounds/ && cd ~/pre
+cd Azure-Linux-Desktop-Experience && cp -v src/.zshrc ~ && cp -rv src/xfce4 ~/.config && cp -rv src/labwc ~/.config && sudo mv -v src/zsh* /usr/share/ && cd ~/pre
 cd Azure-Linux-Desktop-Experience/sub/neofetch && sudo make install && cd ~/pre
 sudo mkdir /usr/share/fonts/PlusJakartaSans && cd Azure-Linux-Desktop-Experience/sub/PlusJakartaSans/fonts/ttf/ && sudo mv -v *.ttf /usr/share/fonts/PlusJakartaSans && cd ~/pre
 

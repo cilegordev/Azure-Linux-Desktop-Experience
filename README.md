@@ -4,5 +4,5 @@ Azure Linux, previously known as CBL-Mariner (in which CBL stands for Common Bas
 
 | Preview |
 |-|
-| ![](img2.png) |
+| ![](src/img2.png) |
 | <div align="center"> Hyprland </div> |
