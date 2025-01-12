@@ -1,30 +1,30 @@
-[submodule "Flat-Adwaita"]
+[submodule "sub/Flat-Adwaita"]
 	path = sub/Flat-Adwaita
 	url = https://github.com/cilegordev/Flat-Adwaita
-[submodule "neofetch"]
+[submodule "sub/neofetch"]
 	path = sub/neofetch
 	url = https://github.com/cilegordev/neofetch
-[submodule "xfce4-polkit"]
+[submodule "sub/xfce4-polkit"]
 	path = sub/xfce4-polkit
 	url = https://github.com/cilegordev/xfce4-polkit
-[submodule "PlusJakartaSans"]
-	path = sub/PlusJakartaSans
-	url = https://github.com/tokotype/PlusJakartaSans/
-[submodule "xarchiver"]
-	path = sub/xarchiver
-	url = https://github.com/ib/xarchiver/
-[submodule "gtk4-layer-shell"]
-	path = sub/gtk4-layer-shell
-	url = https://github.com/wmww/gtk4-layer-shell
-[submodule "gtk-layer-shell"]
+[submodule "sub/gtk-layer-shell"]
 	path = sub/gtk-layer-shell
 	url = https://github.com/wmww/gtk-layer-shell
-[submodule "mugshot"]
-	path = sub/mugshot
-	url = https://github.com/bluesabre/mugshot
-[submodule "menulibre"]
+[submodule "sub/gtk4-layer-shell"]
+	path = sub/gtk4-layer-shell
+	url = https://github.com/wmww/gtk4-layer-shell
+[submodule "sub/menulibre"]
 	path = sub/menulibre
 	url = https://github.com/bluesabre/menulibre
-[submodule "xdotool"]
+[submodule "sub/mugshot"]
+	path = sub/mugshot
+	url = https://github.com/bluesabre/mugshot
+[submodule "sub/PlusJakartaSans"]
+	path = sub/PlusJakartaSans
+	url = https://github.com/tokotype/PlusJakartaSans
+[submodule "sub/xarchiver"]
+	path = sub/xarchiver
+	url = https://github.com/ib/xarchiver
+[submodule "sub/xdotool"]
 	path = sub/xdotool
 	url = https://github.com/jordansissel/xdotool
