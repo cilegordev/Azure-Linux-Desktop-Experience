@@ -4,6 +4,9 @@
 [submodule "neofetch"]
 	path = neofetch
 	url = https://github.com/cilegordev/neofetch
+[submodule "xfce4-polkit"]
+	path = xfce4-polkit
+	url = https://github.com/cilegordev/xfce4-polkit
 [submodule "PlusJakartaSans"]
 	path = PlusJakartaSans
 	url = https://github.com/tokotype/PlusJakartaSans/
@@ -19,6 +22,9 @@
 [submodule "mugshot"]
 	path = mugshot
 	url = https://github.com/bluesabre/mugshot
+[submodule "menulibre"]
+	path = menulibre
+	url = https://github.com/bluesabre/menulibre
 [submodule "xdotool"]
 	path = xdotool
 	url = https://github.com/jordansissel/xdotool
