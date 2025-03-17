@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Calculator
+Comment=Scientific calculator for X
+GenericName=Calculator
+Exec=xcalc
+Icon=xcalc
+Type=Application
+Categories=Utility;Calculator;
