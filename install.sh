@@ -162,21 +162,12 @@ echo -e 'if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then\n    startx\nf
 echo -e 'if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then\n    startx\nfi' >> ~/.zprofile
 chsh -s $(which zsh)
 sudo rm -rfv /etc/profile.d/debuginfod.sh
+echo -e "[D-BUS Service] \nName=org.freedesktop.systemd1 \nExec=/usr/lib/systemd/systemd --user" | sudo tee /usr/share/dbus-1/services/org.freedesktop.systemd1.service
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 sudo systemctl enable NetworkManager.service
 sudo systemctl start NetworkManager.service
 clear
 echo -e "\e[31mwarning - cleaning installer! \e[0m"
-sleep 2
-read -p "Delet temp file? (y/n): " response
-if [ "$response" = "y" ]; then
-    sudo rm -rfv ~/pre
-    sudo dnf -y remove *-test* adwaita-icon-theme-devel cairo-devel cairomm-d* cryptsetup-devel dbus-python-devel device-mapper*devel e2fsprogs-devel flac-devel gdbm-devel gdk-pixbuf2-tests glibmm-d* libmtp* gnome-icon-theme-devel gtk2-devel-docs gtk3-devel-docs gtk3-tests gtkspell-devel gperftools-d* graphene-devel graphene-tests gsettings-desktop-schemas-devel gspell-d* gstreamer1-devel hwdata-devel iso-codes-devel jansson-devel kmod-devel libICE-devel libX*devel libarchive-devel libyaml-devel libburn-devel libbytesize-devel libcanberra-devel libcap-devel libcap-ng-devel libcdio-devel libdbusmenu-devel libdvdread-devel libedit-devel libexif-d* libgcrypt-devel libgudev-devel libinput-devel libinput-test libisofs-devel libjpeg-turbo-devel libltdl-devel libndp-devel libnotify-devel libogg-d* libpng12-devel libpsl-devel librs*devel libsecret-devel libsndfile-devel libsoup-devel libva*devel* libvorbis-d* libvpx-devel libxcrypt-devel libxk*devel* lynx lz4-devel lzo-devel mobile-broadband-provider-info-devel ncurses-devel ndctl-devel newt-devel nspr-devel nss-devel pam-devel pcre2-devel-static pcre2-doc polkit-devel ppp-devel python3-devel soundtouch-devel upower-devel vala-d* vte291-devel vulkan-loader-devel wayland-d* xcb-util*devel* xkeyboard-config-devel xorg*devel*
-    echo -e "\e[33mdone - trying to running xfce4! \e[0m"
-    sleep 2
-else
-    echo -e "\e[33mdone - trying to running xfce4! \e[0m"
-    sleep 2
-fi
+sleep 3
 clear
 startx
