@@ -50,7 +50,6 @@ sleep 2
 sudo timedatectl set-timezone Asia/Jakarta
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 echo "$(whoami) ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$(whoami)
-sudo dnf -y install azurelinux-repos* && sudo dnf -y remove azurelinux-repos-debug* && sudo rm -rf /etc/yum.repos.d/*debug*
 mkdir .config
 mkdir pre
 sudo mkdir /usr/share/applications
@@ -58,6 +57,7 @@ sudo mkdir /usr/share/themes
 sudo mkdir /usr/share/icons
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/fonts
+sudo dnf -y install azurelinux-repos-extended
 cd ~/pre
 git clone --recurse-submodules --branch=Experimental https://github.com/cilegordev/Azure-Linux-Desktop-Experience
 cd Azure-Linux-Desktop-Experience/sub/Flat-Adwaita && sudo mv -v Adwaita-dark-PONIES /usr/share/themes && sudo mv -v Flat-ZOMG-dark /usr/share/icons && cd ~/pre
