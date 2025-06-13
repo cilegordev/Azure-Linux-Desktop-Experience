@@ -48,9 +48,9 @@ sudo mkdir /usr/share/themes
 sudo mkdir /usr/share/icons
 sudo mkdir /usr/share/backgrounds
 sudo mkdir /usr/share/fonts
+sudo dnf -y install azurelinux-repos-extended
 cd ~/pre
 git clone --recurse-submodules https://github.com/cilegordev/Azure-Linux-Desktop-Experience
-cd Azure-Linux-Desktop-Experience/azurelinux-repo && sudo rm -rfv /etc/yum.repos.d/* && sudo mv -v *.repo /etc/yum.repos.d && cd ~/pre
 cd Azure-Linux-Desktop-Experience/Flat-Adwaita && sudo mv -v Adwaita-dark-PONIES /usr/share/themes && sudo mv -v Flat-ZOMG-dark /usr/share/icons && cd ~/pre
 cd Azure-Linux-Desktop-Experience && sudo mv -v img0.png /usr/share/backgrounds/ && cd ~/pre
 cd Azure-Linux-Desktop-Experience && cp -v .zshrc ~ && cp -rv xfce4 ~/.config && sudo mv -v zsh* /usr/share/ && cd ~/pre
